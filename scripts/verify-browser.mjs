@@ -1,6 +1,6 @@
 import { chromium } from "playwright-core";
 
-const url = process.argv[2] ?? "http://127.0.0.1:4322/";
+const url = process.argv[2] ?? "http://127.0.0.1:4322/portfolio-website/";
 const out = [];
 const fail = (msg) => {
   out.push(`FAIL ${msg}`);

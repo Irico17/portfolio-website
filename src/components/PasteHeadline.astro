@@ -1,0 +1,30 @@
+---
+interface Props {
+  text: string;
+  as?: "h2" | "h3" | "p";
+  id?: string;
+}
+
+const { text, as: Tag = "h2", id } = Astro.props;
+const chars = [...text];
+---
+
+<Tag class="paste-headline scrap-in" id={id} aria-label={text} style="--d:80">
+  {
+    chars.map((letter, i) =>
+      letter === " " ? (
+        <span class="space" aria-hidden="true"></span>
+      ) : (
+        <span
+          class:list={[
+            { invert: i === 0 || letter.toUpperCase() === "K" },
+            { display: i === 2 },
+          ]}
+          style={`--i:${i}; --rot:${((i % 5) - 2) * 0.9}deg`}
+        >
+          {letter}
+        </span>
+      )
+    )
+  }
+</Tag>

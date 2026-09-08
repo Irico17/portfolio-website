@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import PasteHeadline from "../components/PasteHeadline.astro";
 import { site, camino, skills, projects } from "../data/site";
 import paperGround from "../assets/plates/paper-ground.png";
 import contactoStamp from "../assets/plates/contacto-stamp.png";
@@ -11,6 +12,13 @@ import skillsScrap from "../assets/plates/skills-scrap.png";
 import cristhoferRansom from "../assets/plates/cristhofer-ransom.png";
 import linkedinScrap from "../assets/plates/linkedin-scrap.png";
 import githubScrap from "../assets/plates/github-scrap.png";
+import skillsInk from "../assets/plates/skills-ink.png";
+import caminoInk from "../assets/plates/camino-ink.png";
+import proyecto01Ink from "../assets/plates/proyecto01-ink.png";
+import proyecto02Scrap from "../assets/plates/proyecto02-scrap.png";
+import clusterInk from "../assets/plates/cluster-ink.png";
+import estudioInk from "../assets/plates/estudio-ink.png";
+import rolInk from "../assets/plates/rol-ink.png";
 
 const rest = projects;
 const captureHero = Astro.url.searchParams.get("capture") === "hero";
@@ -62,53 +70,66 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
         <div class="only-capture capture-fill capture-trabajo"></div>
       </div>
       <div class="r-proyecto01-label">
-        <p class="work-label only-live scrap-in" style="--d:300">PROYECTO 01</p>
+        <p class="ink-hit p01-hit only-live scrap-in" style="--d:300">
+          <Image class="type-plate" src={proyecto01Ink} alt="" widths={[579, 1158]} sizes="50vw" quality={84} inferSize />
+          <span class="sr-only">PROYECTO 01</span>
+        </p>
         <div class="only-capture capture-fill capture-p01"></div>
       </div>
       <div class="r-proyecto02-label">
-        <p class="work-hit only-live scrap-in" style="--d:360">
+        <p class="ink-hit p02-hit only-live scrap-in" style="--d:360">
+          <Image class="type-plate" src={proyecto02Scrap} alt="" widths={[520, 1040]} sizes="40vw" quality={84} inferSize />
           <span class="sr-only">PROYECTO 02</span>
         </p>
         <div class="only-capture capture-fill capture-p02"></div>
       </div>
       <div class="r-camino-title">
-        <h2 class="card-title only-live scrap-in" id="camino" style="--d:420">CAMINO</h2>
+        <h2 class="ink-hit camino-hit only-live scrap-in" id="camino" style="--d:420">
+          <Image class="type-plate" src={caminoInk} alt="" widths={[320, 640]} sizes="20vw" quality={84} inferSize />
+          <span class="sr-only">CAMINO</span>
+        </h2>
         <div class="only-capture capture-fill capture-camino"></div>
       </div>
       <div class="r-estudio-block">
-        <p class="mini only-live scrap-in" style="--d:470">
-          <strong>Estudio</strong>
-          <span class="rule">PUCP</span>
+        <p class="ink-hit estudio-hit only-live scrap-in" style="--d:470">
+          <Image class="type-plate" src={estudioInk} alt="" widths={[426, 852]} sizes="14vw" quality={82} inferSize />
+          <span class="sr-only">Estudio PUCP</span>
         </p>
         <div class="only-capture capture-fill capture-estudio"></div>
       </div>
       <div class="r-rol-block">
-        <p class="mini only-live scrap-in" style="--d:510">
-          <strong>Rol</strong>
-          <span class="rule">IBM</span>
+        <p class="ink-hit rol-hit only-live scrap-in" style="--d:510">
+          <Image class="type-plate" src={rolInk} alt="" widths={[426, 852]} sizes="20vw" quality={82} inferSize />
+          <span class="sr-only">Rol IBM</span>
         </p>
         <div class="only-capture capture-fill capture-rol"></div>
       </div>
       <div class="r-skills-title">
-        <h2 class="card-title only-live scrap-in" id="skills" style="--d:480">SKILLS</h2>
+        <h2 class="ink-hit skills-hit only-live scrap-in" id="skills" style="--d:480">
+          <Image class="type-plate" src={skillsInk} alt="" widths={[573, 1146]} sizes="15vw" quality={84} inferSize />
+          <span class="sr-only">SKILLS</span>
+        </h2>
         <div class="only-capture capture-fill capture-skills"></div>
       </div>
       <div class="r-skill-cluster">
-        <p class="cluster only-live scrap-in" style="--d:530">Skill cluster</p>
+        <p class="ink-hit cluster-hit only-live scrap-in" style="--d:530">
+          <Image class="type-plate" src={clusterInk} alt="" widths={[439, 878]} sizes="30vw" quality={84} inferSize />
+          <span class="sr-only">Skill cluster</span>
+        </p>
         <div class="only-capture capture-fill capture-cluster"></div>
       </div>
     </section>
 
     <section class="more" aria-label="El resto de la mesa" hidden={captureHero}>
       <article class="sheet pink">
-        <h2>Archivo de obra</h2>
+        <PasteHeadline text="Archivo de obra" />
         <ol class="project-list">
           {
             rest.map((project) => (
               <li>
-                <span>{project.id}</span>
-                <span>{project.title}</span>
-                <span>{project.status}</span>
+                <span class="slot-id">{project.id}</span>
+                <span class="skill-scrap">{project.title}</span>
+                <span class="slot-status">{project.status}</span>
               </li>
             ))
           }
@@ -116,7 +137,7 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
       </article>
 
       <article class="sheet">
-        <h2>Camino completo</h2>
+        <PasteHeadline text="Camino completo" />
         <ol class="path-list">
           {
             camino.map((item) => (
@@ -134,14 +155,18 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
       </article>
 
       <article class="sheet">
-        <h2>Skill cluster</h2>
+        <PasteHeadline text="Skill cluster" />
         <ul class="skill-list">
-          {skills.map((skill) => <li>{skill}</li>)}
+          {skills.map((skill) => (
+            <li>
+              <span class="skill-scrap">{skill}</span>
+            </li>
+          ))}
         </ul>
       </article>
 
       <article class="sheet" id="contacto">
-        <h2>Contacto</h2>
+        <PasteHeadline text="Contacto" />
         <div class="contact-row">
           <a href={site.links.linkedin} rel="me" class="scrap-link">
             <Image class="scrap-btn" src={linkedinScrap} alt="LinkedIn" widths={[384, 768]} sizes="240px" quality={78} inferSize loading="lazy" />
