@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T08:06:00.000Z",
+  "title": "Design System: Tonight's Flyer",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cheap Copy Stock",
+        "canonical": "oklch(85.3% 0.007 68)",
+        "tonalRamp": ["#14110e", "#2b2825", "#45423e", "#66635f", "#898582", "#aeaaa6", "#d4d0cc", "#f2eeea"]
+      },
+      "toner": {
+        "role": "neutral",
+        "displayName": "Toner Black",
+        "canonical": "oklch(25.7% 0.002 286)",
+        "tonalRamp": ["#111112", "#29292a", "#424243", "#636364", "#868687", "#aaaaac", "#d1d1d2", "#eeeef0"]
+      },
+      "dust": {
+        "role": "neutral",
+        "displayName": "Halftone Dust",
+        "canonical": "oklch(71.8% 0.007 68)",
+        "tonalRamp": ["#14110e", "#2b2825", "#45423e", "#66625f", "#898581", "#aeaaa6", "#d4d0cc", "#f2eee9"]
+      },
+      "pink": {
+        "role": "primary",
+        "displayName": "Day-Glo Xerox Pink",
+        "canonical": "oklch(63.8% 0.197 6)",
+        "tonalRamp": ["#460005", "#690019", "#8b0032", "#b60852", "#e04274", "#ff6b98", "#ff92bd", "#ffb1da"]
+      },
+      "ransom-scrap": {
+        "role": "neutral",
+        "displayName": "Ransom Scrap",
+        "canonical": "oklch(92.7% 0.011 77)",
+        "tonalRamp": ["#14110c", "#2c2823", "#46423c", "#67635c", "#8a857f", "#afaaa3", "#d5d0c9", "#f3eee7"]
+      },
+      "biro": {
+        "role": "secondary",
+        "displayName": "Indigo Biro",
+        "canonical": "#2a4580",
+        "tonalRamp": ["#0e1a33", "#2a4580", "#4a6ab0", "#8aa3d4"]
+      },
+      "stamp": {
+        "role": "primary",
+        "displayName": "Stamp Magenta",
+        "canonical": "#dc376e",
+        "tonalRamp": ["#6b1234", "#dc376e", "#e74879"]
+      },
+      "type-ink": {
+        "role": "neutral",
+        "displayName": "Typed Ink",
+        "canonical": "#19191a",
+        "tonalRamp": ["#090a0a", "#19191a", "#232324"]
+      },
+      "dense": {
+        "role": "neutral",
+        "displayName": "Dense Toner",
+        "canonical": "#090a0a",
+        "tonalRamp": ["#090a0a", "#19191a", "#232324"]
+      },
+      "scrap-hot": {
+        "role": "neutral",
+        "displayName": "Hot Scrap Fill",
+        "canonical": "#f7eef2",
+        "tonalRamp": ["#f7eef2", "#ebe6df"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Ransom-cut identity. One Prism glyph among mono tiles; never paragraph type."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Archivo Black poster shouts (TRABAJO-scale). Uppercase, tight leading and tracking."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Typed section words (CAMINO, SKILLS, sheet h2). Light mono, tracked uppercase, hairline underline."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default typed page: path copy, skills, legal. Weight 300."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Mini Estudio/Rol lines and work-slot names. Weight 400, slight tracking, uppercase where labeled."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Handwritten note voice. Live tagline is an indigo-biro raster; leftover CSS may fall back to Segoe Script."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet-drop",
+        "value": "0 10px 22px rgb(20 16 14 / 0.22)",
+        "purpose": "Soft drop under below-fold xerox sheets only."
+      },
+      {
+        "name": "letter-lip",
+        "value": "1px 2px 0 rgb(20 16 14 / 0.18)",
+        "purpose": "Hard lip on ransom letter tiles. Not a generic elevation token."
+      },
+      {
+        "name": "cut-invert-lip",
+        "value": "2px 3px 0 rgb(20 16 14 / 0.2)",
+        "purpose": "Slightly heavier lip on inverted cut-word glyphs."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Slap-in, stamp settle, and hover lift."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Reserved in :root for reciprocal moves; slap uses ease-out."
+      },
+      {
+        "name": "duration-slap",
+        "value": "560ms",
+        "purpose": "Scrap slap-down and stamp slap."
+      },
+      {
+        "name": "duration-letter",
+        "value": "480ms",
+        "purpose": "Per-letter ransom settle, staggered ~55ms."
+      },
+      {
+        "name": "duration-xerox",
+        "value": "780ms",
+        "purpose": "One-generation darker photocopy bite on the proyecto strip."
+      },
+      {
+        "name": "duration-hover",
+        "value": "160ms",
+        "purpose": "Fine-pointer lift and contrast on stamps, tiles, sheets, scrap links (stamp/sheet 180ms)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "860px",
+        "purpose": "Paste-up restacks into a column; paper-ground hides."
+      },
+      {
+        "name": "desk",
+        "value": "861px",
+        "purpose": "Overlapping 1536×1024 desk with absolute scraps."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "CONTACTO Stamp",
+      "kind": "button",
+      "refersTo": "stamp",
+      "description": "Primary action: square-cut poster stamp, rotated, pink frame, no fill.",
+      "html": "<a class=\"ds-stamp\" href=\"#contacto\">CONTACTO</a>",
+      "css": ".ds-stamp { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 0.15rem 0.4rem; color: #dc376e; background: transparent; border: 3px solid #dc376e; font-family: var(--font-poster, \"Archivo Black\", \"Arial Black\", sans-serif); font-size: 26px; font-weight: 400; letter-spacing: 0.1em; line-height: 1; text-transform: uppercase; text-decoration: none; border-radius: 0; transform: rotate(-7deg); min-height: 44px; transition: transform 180ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)), filter 180ms ease; } .ds-stamp:hover { transform: rotate(-7deg) translateY(-3px); filter: contrast(1.18); } .ds-stamp:focus-visible { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; } .ds-stamp:active { transform: rotate(-7deg) scale(0.97); }"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "nav",
+      "refersTo": "skip",
+      "description": "Spanish skip to Trabajo; toner fill, parked off-canvas until focused.",
+      "html": "<a class=\"ds-skip\" href=\"#trabajo\">Ir a trabajo</a>",
+      "css": ".ds-skip { display: inline-block; padding: 0.6rem 0.8rem; background: var(--toner, #232324); color: var(--paper, #d2ceca); font-family: var(--font-body, \"Intel One Mono\", \"Courier New\", monospace); font-weight: 300; text-decoration: none; border-radius: 0; } .ds-skip:hover { filter: contrast(1.08); } .ds-skip:focus-visible { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; }"
+    },
+    {
+      "name": "Scrap Link",
+      "kind": "button",
+      "refersTo": "scrap-link",
+      "description": "Contact scrap: torn xerox plate, no icon font, 44px minimum hit.",
+      "html": "<a class=\"ds-scrap-link\" href=\"#contacto\" aria-label=\"LinkedIn\"><svg viewBox=\"0 0 240 72\" width=\"240\" height=\"72\" aria-hidden=\"true\"><rect width=\"240\" height=\"72\" fill=\"#d2ceca\"/><polygon points=\"8,6 232,10 226,64 12,68\" fill=\"#ebe6df\" stroke=\"#232324\" stroke-width=\"1.5\"/><text x=\"120\" y=\"44\" text-anchor=\"middle\" font-family=\"Intel One Mono, Courier New, monospace\" font-size=\"18\" fill=\"#232324\">LinkedIn</text></svg></a>",
+      "css": ".ds-scrap-link { display: block; min-height: 44px; min-width: 44px; padding: 0; background: transparent; text-decoration: none; flex: 1 1 12rem; max-width: 18rem; color: inherit; } .ds-scrap-link svg { display: block; width: 100%; height: auto; } .ds-scrap-link:hover { filter: contrast(1.08); } .ds-scrap-link:focus-visible { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; } .ds-scrap-link:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Xerox Sheet",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "Below-fold copy page: paper ground, soft drop, slight rotate, typed heading.",
+      "html": "<article class=\"ds-sheet\"><h2 class=\"ds-sheet-title\">Camino completo</h2><p class=\"ds-sheet-body\">Ingeniería Informática — PUCP</p></article>",
+      "css": ".ds-sheet { position: relative; padding: 1.4rem 1.5rem 1.6rem; color: var(--toner, #232324); background-color: var(--paper, #d2ceca); box-shadow: 0 10px 22px rgb(20 16 14 / 0.22); transform: rotate(-0.35deg); border-radius: 0; font-family: var(--font-body, \"Intel One Mono\", \"Courier New\", monospace); font-weight: 300; line-height: 1.45; transition: transform 180ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)); } .ds-sheet:hover { transform: translateY(-3px); } .ds-sheet:focus-within { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; } .ds-sheet-title { margin: 0 0 0.8rem; font-size: clamp(1.4rem, 2.6vw, 2.4rem); font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; } .ds-sheet-body { margin: 0; }"
+    },
+    {
+      "name": "Pink Archivo Sheet",
+      "kind": "card",
+      "refersTo": "sheet-pink",
+      "description": "The one pink xerox page — work archive, still toner type.",
+      "html": "<article class=\"ds-sheet-pink\"><h2 class=\"ds-sheet-title\">Archivo de obra</h2><p class=\"ds-sheet-body\">01 · Proyecto 01 · Slot pendiente</p></article>",
+      "css": ".ds-sheet-pink { position: relative; padding: 1.4rem 1.5rem 1.6rem; color: var(--toner, #232324); background-color: var(--pink, #e74879); box-shadow: 0 10px 22px rgb(20 16 14 / 0.22); transform: rotate(0.55deg); border-radius: 0; font-family: var(--font-body, \"Intel One Mono\", \"Courier New\", monospace); font-weight: 300; line-height: 1.45; transition: transform 180ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)); } .ds-sheet-pink:hover { transform: translateY(-3px); } .ds-sheet-pink:focus-within { outline: 2px solid var(--toner, #232324); outline-offset: 3px; } .ds-sheet-pink .ds-sheet-title { margin: 0 0 0.8rem; font-size: clamp(1.4rem, 2.6vw, 2.4rem); font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; } .ds-sheet-pink .ds-sheet-body { margin: 0; }"
+    },
+    {
+      "name": "Ransom Name",
+      "kind": "custom",
+      "refersTo": "ransom-tile",
+      "description": "Cut-letter identity: scrap tiles, invert, hot pink, one Prism glyph.",
+      "html": "<p class=\"ds-ransom\" aria-label=\"Cristhofer\"><span class=\"ds-ransom-tile ds-ransom-invert\">C</span><span class=\"ds-ransom-tile\">r</span><span class=\"ds-ransom-tile ds-ransom-display\">i</span><span class=\"ds-ransom-tile ds-ransom-hot\">s</span><span class=\"ds-ransom-tile\">t</span></p>",
+      "css": ".ds-ransom { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.06em; margin: 0; font-family: var(--font-body, \"Intel One Mono\", \"Courier New\", monospace); font-size: clamp(2.2rem, 12vw, 3.8rem); line-height: 0.82; font-weight: 400; } .ds-ransom-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 0.62em; padding: 0.05em 0.07em 0.02em; background: var(--ransom-scrap, #ebe6df); color: var(--toner, #232324); box-shadow: 1px 2px 0 rgb(20 16 14 / 0.18); transform: rotate(-1deg); border-radius: 0; transition: transform 160ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)); } .ds-ransom-invert { background: var(--toner, #232324); color: var(--paper, #d2ceca); } .ds-ransom-hot { background: var(--pink, #e74879); color: #f7eef2; } .ds-ransom-display { font-family: var(--font-display, \"Tilt Prism\", \"Times New Roman\", serif); } .ds-ransom-tile:hover { transform: rotate(1.2deg) translateY(-2px); } .ds-ransom-tile:focus-visible { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; }"
+    },
+    {
+      "name": "Card Title",
+      "kind": "custom",
+      "refersTo": "card-title",
+      "description": "Typed section word on a scrap: light mono, uppercase, hairline underline.",
+      "html": "<h2 class=\"ds-card-title\">CAMINO</h2>",
+      "css": ".ds-card-title { display: inline-flex; align-items: center; margin: 0; padding: 0; color: #19191a; font-family: var(--font-body, \"Intel One Mono\", \"Courier New\", monospace); font-size: clamp(1.4rem, 2.6vw, 2.4rem); font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; border-bottom: 2px solid #19191a; width: max-content; max-width: 100%; background: transparent; } .ds-card-title:hover { transform: translateY(-2px); } .ds-card-title:focus-visible { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; }"
+    },
+    {
+      "name": "Work Label",
+      "kind": "custom",
+      "refersTo": "work-label",
+      "description": "Loud mono slot name on the strip. Honest placeholders only.",
+      "html": "<p class=\"ds-work-label\">PROYECTO 01</p>",
+      "css": ".ds-work-label { display: flex; align-items: center; margin: 0; padding: 0 0.4em; color: #19191a; font-family: var(--font-body, \"Intel One Mono\", \"Courier New\", monospace); font-size: clamp(1.05rem, 2.2vw, 1.7rem); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1; white-space: nowrap; background: transparent; } .ds-work-label:hover { filter: contrast(1.08); } .ds-work-label:focus-visible { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; }"
+    },
+    {
+      "name": "Mini Block",
+      "kind": "custom",
+      "refersTo": "mini",
+      "description": "Two-line typed scrap: uppercase label, dashed rule, place name.",
+      "html": "<p class=\"ds-mini\"><strong>Estudio</strong><span class=\"ds-mini-rule\">PUCP</span></p>",
+      "css": ".ds-mini { margin: 0; color: #090a0a; font-family: var(--font-body, \"Intel One Mono\", \"Courier New\", monospace); font-size: 16px; line-height: 1.05; font-weight: 400; } .ds-mini strong { display: block; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; } .ds-mini-rule { display: block; margin-top: 0.15rem; padding-bottom: 0.12rem; border-bottom: 1px dashed color-mix(in srgb, var(--toner, #232324) 55%, transparent); } .ds-mini:hover { filter: contrast(1.06); } .ds-mini:focus-visible { outline: 2px solid var(--pink, #e74879); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Tonight's Flyer",
+    "overview": "The page is a paste-up desk: cheap xerox stock still warm from the copier, toner, torn scraps, and one day-glo pink stamp. It is a scene first. Recruiter, peer, or friend should feel the table, name Cristhofer Alegre, and reach work, path, skills, and contact without hunting.\n\nDensity is flyer-tight, not dashboard-airy. Type is cut, stamped, or typed on a typewriter. The first viewport is overlapping sheets on a 1536×1024 desk; everything below is more xerox pages in a stack. Spanish chrome. Honest slots stay slots.\n\nConfirmed rejections: the SaaS card grid, the amp-gadget hero, and the dark recinto / chrome-neon translation. Atmosphere is identity, but spectacle never hides Trabajo, Camino, Skills, or Contacto.",
+    "keyCharacteristics": [
+      "Cheap xerox paper ground, tiled grain, thin noise overlay",
+      "Toner black for type and cuts; one day-glo pink for action",
+      "Ransom-cut name, Archivo Black shouts, Intel One Mono for typed matter",
+      "Overlapping scraps on a 3:2 desk; mobile restacks the same pieces",
+      "Placeholders read as placeholders (Proyecto 01, Slot pendiente)"
+    ],
+    "rules": [
+      {
+        "name": "The One Pink Rule",
+        "body": "Day-glo pink is the only chroma for action. If a surface needs emphasis, stamp it or invert it in toner. Do not add a second accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Copy-Stock Rule",
+        "body": "Grounds stay xerox paper. Dark shells, pure white boards, and cool SaaS gray are off the desk.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cut-Letter Rule",
+        "body": "The name is ransom tiles, never a single clean wordmark and never a system UI display face as the lead.",
+        "section": "typography"
+      },
+      {
+        "name": "The Typewriter Body Rule",
+        "body": "Intel One Mono carries body, titles, and labels. Archivo Black and Tilt Prism shout; they do not set paragraphs.",
+        "section": "typography"
+      },
+      {
+        "name": "The Overlap Rule",
+        "body": "Desk depth comes from overlapping scraps, z-index, and grain. Soft drops belong on stacked xerox sheets below the fold. Hard-offset lips belong on cut letters only.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the desk on cheap copy stock with toner type and a single pink for action.",
+      "Do build identity as ransom tiles and section yells as Archivo Black; let Intel One Mono do the reading.",
+      "Do stack overlapping xerox scraps on desktop and restack those same scraps below 860px.",
+      "Do leave empty work as numbered slots. Spanish chrome; SKILLS may stay as shipped.",
+      "Do slap scraps on enter (560ms ease-out) and kill motion when `prefers-reduced-motion: reduce`. Keep 44px hits and a visible pink focus ring."
+    ],
+    "donts": [
+      "Don't introduce a second accent, a dark recinto shell, or a SaaS card grid.",
+      "Don't set body copy in Tilt Prism or Archivo Black, or lead with a system UI display face.",
+      "Don't use round corners, glyph-icon buttons, or a persistent product nav.",
+      "Don't invent project titles, metrics, clients, employers, or schools.",
+      "Don't autoplay sound, or ship a motion-only story with no still collage."
+    ]
+  }
+}

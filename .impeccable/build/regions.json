@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "id": "paper-ground",
+      "kind": "texture",
+      "grid": "J8:J8",
+      "note": "Clean xerox paper grain with no type, a tileable sample of the cheap copy-stock ground."
+    },
+    {
+      "id": "nombre-ransom",
+      "kind": "text",
+      "grid": "A0:G3",
+      "note": "Live identity headline Cristhofer Alegre set as ransom-cut type, not a raster of NOMBRE."
+    },
+    {
+      "id": "tagline",
+      "kind": "text",
+      "grid": "B3:E3",
+      "note": "Small indigo typewriter line: diseño + desarrollo + dirección."
+    },
+    {
+      "id": "contacto-stamp",
+      "kind": "plate",
+      "grid": "H0:J2",
+      "note": "Torn hot-pink paper stamp at the top-right, empty of type, rubber-stamp edges."
+    },
+    {
+      "id": "contacto-label",
+      "kind": "control",
+      "grid": "H1:J2",
+      "note": "CONTACTO in black condensed type on the pink stamp; this is the primary action."
+    },
+    {
+      "id": "trabajo-sheet",
+      "kind": "plate",
+      "grid": "A3:I7",
+      "note": "The largest overlapping xerox sheet, torn gray paper, the work page empty of type."
+    },
+    {
+      "id": "trabajo-title",
+      "kind": "text",
+      "grid": "B3:F5",
+      "note": "TRABAJO in heavy black display on the work sheet."
+    },
+    {
+      "id": "proyecto01-strip",
+      "kind": "plate",
+      "grid": "A5:H6",
+      "note": "Long torn hot-pink paper strip across the work sheet, empty of type."
+    },
+    {
+      "id": "proyecto01-label",
+      "kind": "text",
+      "grid": "B5:F6",
+      "note": "PROYECTO 01 in black typewriter on the pink strip."
+    },
+    {
+      "id": "proyecto02-label",
+      "kind": "text",
+      "grid": "B6:E7",
+      "note": "PROYECTO 02 in smaller typewriter on the gray work sheet."
+    },
+    {
+      "id": "camino-card",
+      "kind": "plate",
+      "grid": "A7:G9",
+      "note": "Smaller stapled xerox card at bottom-left, torn edges and staple row, empty of type."
+    },
+    {
+      "id": "camino-title",
+      "kind": "text",
+      "grid": "B7:D7",
+      "note": "CAMINO in typewriter on the stapled card."
+    },
+    {
+      "id": "estudio-block",
+      "kind": "text",
+      "grid": "B8:C9",
+      "note": "Estudio heading and honest placeholder line, no invented school."
+    },
+    {
+      "id": "rol-block",
+      "kind": "text",
+      "grid": "D8:E9",
+      "note": "Rol heading and honest placeholder line, no invented employer."
+    },
+    {
+      "id": "skills-scrap",
+      "kind": "plate",
+      "grid": "F7:J9",
+      "note": "Small torn white scrap at bottom-right held by translucent tape, empty of type."
+    },
+    {
+      "id": "skills-title",
+      "kind": "text",
+      "grid": "G7:I7",
+      "note": "SKILLS in typewriter on the taped scrap."
+    },
+    {
+      "id": "skill-cluster",
+      "kind": "text",
+      "grid": "G8:I9",
+      "note": "Skill cluster placeholder line, underlined, no fake proficiency."
+    }
+  ]
+}

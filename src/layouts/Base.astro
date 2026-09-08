@@ -1,0 +1,41 @@
+---
+import "../styles/global.css";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+}
+
+const { title = site.title } = Astro.props;
+const captureHero = Astro.url.searchParams.get("capture") === "hero";
+---
+
+<!doctype html>
+<html lang="es" class:list={[{ "hero-capture": captureHero }]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={site.description} />
+    <meta name="theme-color" content="#d2ceca" />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="/plates/contacto-ink.webp" />
+    <link rel="preload" as="image" href="/plates/trabajo-ink.webp" />
+    <link rel="preload" as="image" href="/plates/tagline-biro.webp" />
+    <script is:inline>
+      (function () {
+        var cap = new URLSearchParams(location.search).get("capture");
+        if (cap === "hero" || cap === "desktop") {
+          document.documentElement.classList.add("hero-capture");
+        }
+        if (cap === "desktop") {
+          document.documentElement.classList.add("desktop-capture");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#trabajo">Ir a trabajo</a>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,9 @@
+﻿{
+  "id": "comp-a",
+  "label": "Nombre a sangrado",
+  "role": "archived-alternate",
+  "approved": false,
+  "kept_for": "Pull structure, type, or scraps into Hojas grapadas if we want them later.",
+  "source": ".impeccable/mocks/pasteup-comp-a.png",
+  "world": "Mesa de paste-up, quality-bar tones"
+}

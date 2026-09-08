@@ -1,0 +1,152 @@
+{
+  "title": "Elige el mundo visual",
+  "question": "El roll asignó Chasis encendido. Quédate con él, toma una alternativa, o vuelve a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Chasis encendido",
+      "kicker": "THE ROLL",
+      "lineage": "faceplate de combo de escenario: placa grabada, joya piloto, VU, tela de reja",
+      "thesis": "El portafolio es un combo visto a la altura del pecho: un recinto que se enciende, no una página que se presenta.",
+      "palette": ["#1C1612", "#C9A24A", "#B4232C", "#E39B1A", "#C4B6A0"],
+      "materials": ["chasis oxidado", "oro sucio grabado", "tela de reja", "fósforo CRT en la joya"],
+      "viewport": "La placa llena el landscape: nombre grabado a la izquierda, un VU vivo al centro como único artefacto, cuatro switches —Trabajo, Camino, Skills, Contacto— en una fila de instrumento; la reja abajo deja ver Proyecto 01.",
+      "risk": "Puede leerse como gadget de tienda de guitarras si los knobs no son navegación real y el VU no es el único momento extraordinario.",
+      "raised": [
+        {
+          "from": "challenger-ink-basin",
+          "raise": "Ley de la cuenca: el VU responde al pointer con fuerza física, no con glow ornamental."
+        },
+        {
+          "from": "challenger-multiplane",
+          "raise": "Planos de recinto: lluvia, metal, reja y tipo se apilan y cambian de foco; no es una foto plana de amp."
+        },
+        {
+          "from": "challenger-drawcord",
+          "raise": "Un encendido: una sola transformación con nombre —standby, on, play— jamás un carnaval de perillas."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Cartel de gira",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "cartel offset de gira: rock latinoamericano + Catfish and the Bottlemen",
+      "thesis": "La primera vista es un cartel de medianoche: el nombre es el headliner y el recinto es la tinta.",
+      "palette": ["#21160F", "#D4A017", "#9E1C28", "#E8D4B0"],
+      "materials": ["offset mal registrado", "oro sucio de cartel", "papel de recinto", "sangre de escenario"],
+      "viewport": "Cartel a sangrado: el nombre monumental, una franja de setlist con las cuatro secciones, y Proyecto 01 como la canción de apertura, no como card.",
+      "risk": "Es la dirección donde más corridas de este brief aterrizan; familiar y eficaz, puede parecer landing de banda si el trabajo no se encuentra en segundos.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-select-rail",
+      "label": "Riel de corte",
+      "verdict": "competitive",
+      "lineage": "mesa de corte: riel perforado, frames pinchados, bandera de cinta",
+      "thesis": "El trabajo corre en un riel a altura fija; lo que dejas cuelga abajo, y una bandera ámbar marca dónde paraste.",
+      "palette": ["#1C1612", "#E39B1A", "#C4B6A0", "#B4232C"],
+      "materials": ["grano de película", "perforación", "cinta doblada", "metal de banco"],
+      "viewport": "Un riel cruza el landscape: Proyecto 01–03 son frames pinchados; Estudio / rol cuelga en el bin; Skills son cruces de grasa, no tiles.",
+      "case": "Gana claridad para un recruiter de 20 segundos; pierde identificación: esta persona es recinto, no sala de edición.",
+      "risk": "El riel puede sentirse cineasta-cosplay si el chasis no sigue siendo el recinto fusionado.",
+      "comp": ".impeccable/mocks/decision/challenger-select-rail.webp",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail.webp"
+    },
+    {
+      "id": "challenger-pasteup",
+      "label": "Mesa de paste-up",
+      "verdict": "competitive",
+      "lineage": "zine punk fotocopiado, ransom type, halftone gastado",
+      "thesis": "El sitio es el flyer de esta noche, todavía caliente de la copiadora, pegado sobre stock de recinto.",
+      "palette": ["#1A1410", "#C4B6A0", "#B4232C", "#C9A24A"],
+      "materials": ["tóner xerox", "bordes rasgados", "halftone abierto", "scrap day-glo traducido a sangre"],
+      "viewport": "Nombre en capitals recortadas; columnas chuecas para Trabajo y Camino; Contacto es el único scrap de acción.",
+      "case": "Gana identificación de escena —Catfish, cartel, rock latino—; pierde claridad: lo más grande y más chueco es hostil al escaneo de CV.",
+      "risk": "Sin disciplina de lectura, se vuelve collage disfrazado de tesis.",
+      "comp": ".impeccable/mocks/decision/challenger-pasteup.webp",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-punk-pasteup-table-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-canon-punk-pasteup-table.webp"
+    },
+    {
+      "id": "challenger-orienteering",
+      "label": "Carta de rumbo",
+      "verdict": "competitive",
+      "lineage": "mapa de orientación: terreno fijo, rumbo encima, controles numerados",
+      "thesis": "El camino es un rumbo de sangre sobre terreno de recinto; cada obra es un control que se pica.",
+      "palette": ["#1C1612", "#6B5340", "#B4232C", "#C9A24A"],
+      "materials": ["curvas de nivel", "capa de rumbo", "círculos de control", "leyenda de símbolos"],
+      "viewport": "Terreno oscuro a sangrado, rumbo en sangre de escenario —nunca púrpura—, Proyecto 01 como primer control, Skills como leyenda al margen.",
+      "case": "Gana claridad de Camino y Trabajo como ruta; pierde identificación: el recruiter no siente escenario, vitral ni amp.",
+      "risk": "Puede leerse como app outdoor si el terreno no es recinto y el rumbo no es sangre de escenario.",
+      "comp": ".impeccable/mocks/decision/challenger-orienteering.webp",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-orienteering-map-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/notation-diagram-systems-orienteering-map.webp"
+    },
+    {
+      "id": "challenger-ink-basin",
+      "label": "Cuenca de tinta",
+      "verdict": "declined",
+      "lineage": "suminagashi: cuenca, gota, corriente, ley de fluido",
+      "thesis": "La página es una cuenca; el trabajo aparece donde la tinta se detiene.",
+      "palette": ["#1C1612", "#B4232C", "#E39B1A", "#C4B6A0"],
+      "materials": ["tinta de escenario", "corriente", "superficie húmeda"],
+      "viewport": "Una cuenca a sangrado; el pointer arrastra la sangre y el ámbar; las secciones viven en el margen quieto.",
+      "case": "Pierde ambos ejes: el recruiter no se identifica con un taller de papel, y el fluido esconde Trabajo, Camino y Skills.",
+      "kept": "Ley física del elemento vivo.",
+      "risk": "Espectáculo que come el trabajo de Persuade.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-fluid-ink-basin-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/medium-native-fluid-ink-basin.webp"
+    },
+    {
+      "id": "challenger-multiplane",
+      "label": "Alba multiplano",
+      "verdict": "declined",
+      "lineage": "cel animation: planos pintados a distinta velocidad",
+      "thesis": "El recinto se recorre como cámara que hunde planos de lluvia, metal y reja.",
+      "palette": ["#1C1612", "#3A2A20", "#C9A24A", "#E39B1A"],
+      "materials": ["gouache de recinto", "celes apilados", "foco por plano"],
+      "viewport": "Cinco planos: lluvia cerca, chasis al medio, reja atrás, tipo en el cel más próximo.",
+      "case": "Pierde ambos ejes: huele a cine de animación, no a este dueño, y el parallax entierra el escaneo.",
+      "kept": "Profundidad en planos materiales, no en una foto plana.",
+      "risk": "Hero cinematográfico que no deja leer el CV.",
+      "hero": "https://impeccable.style/worlds/cards/cinema-cinematography-editing-multiplane-cel-dawn-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/cinema-cinematography-editing-multiplane-cel-dawn.webp"
+    },
+    {
+      "id": "challenger-drawcord",
+      "label": "Capa de cordón",
+      "verdict": "declined",
+      "lineage": "capa de seda con canales de cordón: un jalón cambia el volumen",
+      "thesis": "Un solo jalón transforma el plano en recinto y el standby en play.",
+      "palette": ["#1C1612", "#C9A24A", "#C4B6A0"],
+      "materials": ["seda mate", "cordón de oro sucio", "costura de canal"],
+      "viewport": "Un plano oscuro; un cordón de metal caliente; al jalar, aparecen Trabajo, Camino, Skills.",
+      "case": "Pierde ambos ejes: la moda no es esta cultura, y el contenido escondido hasta el jalón falla al recruiter.",
+      "kept": "Una transformación con nombre y estados, no un festival de controles.",
+      "risk": "El gesto come los 20 segundos del visitante.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-drawcord-transforming-cape-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-drawcord-transforming-cape.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Portafolio dark-SaaS: hero, tres cards de proyecto, fila de métricas, ejecutado a full craft.",
+    "palette": ["#0F1115", "#E8EAED", "#5B8DEF"],
+    "materials": ["card grid", "sans de producto", "foto de UI"],
+    "viewport": "Hero centrado, tres cards idénticas, métricas debajo, contacto al pie.",
+    "risk": "Indistinguible de la competencia, a propósito.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

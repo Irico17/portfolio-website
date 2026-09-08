@@ -1,0 +1,157 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import { site, camino, skills, projects } from "../data/site";
+import paperGround from "../assets/plates/paper-ground.png";
+import contactoStamp from "../assets/plates/contacto-stamp.png";
+import trabajoSheet from "../assets/plates/trabajo-sheet.png";
+import proyectoStrip from "../assets/plates/proyecto01-strip.png";
+import caminoCard from "../assets/plates/camino-card.png";
+import skillsScrap from "../assets/plates/skills-scrap.png";
+import cristhoferRansom from "../assets/plates/cristhofer-ransom.png";
+import linkedinScrap from "../assets/plates/linkedin-scrap.png";
+import githubScrap from "../assets/plates/github-scrap.png";
+
+const rest = projects;
+const captureHero = Astro.url.searchParams.get("capture") === "hero";
+---
+
+<Base>
+  <main class="desk">
+    <section class="comp-frame" aria-label="Mesa de paste-up">
+      <div class="paper-bleed" aria-hidden="true"></div>
+      <div class="r-paper-ground">
+        <Image class="plate paper-tile" src={paperGround} alt="" widths={[616, 1232]} sizes="154px" quality={82} inferSize loading="eager" />
+      </div>
+      <div class="r-trabajo-sheet scrap-in" style="--d:120">
+        <Image class="plate" src={trabajoSheet} alt="" widths={[980, 1382]} sizes="90vw" quality={72} inferSize loading="eager" />
+      </div>
+      <div class="r-contacto-stamp scrap-in" style="--d:80">
+        <Image class="plate" src={contactoStamp} alt="" widths={[692, 1384]} sizes="30vw" quality={78} inferSize loading="eager" />
+      </div>
+      <div class="r-proyecto01-strip scrap-in xerox" style="--d:260">
+        <Image class="plate" src={proyectoStrip} alt="" widths={[640, 980]} sizes="80vw" quality={70} inferSize loading="eager" />
+      </div>
+      <div class="r-camino-card scrap-in" style="--d:400">
+        <Image class="plate" src={caminoCard} alt="" widths={[640, 1075]} sizes="70vw" quality={70} inferSize loading="eager" />
+      </div>
+      <div class="r-skills-scrap scrap-in" style="--d:460">
+        <Image class="plate" src={skillsScrap} alt="" widths={[480, 768]} sizes="50vw" quality={70} inferSize loading="eager" />
+      </div>
+
+      <div class="r-nombre-ransom">
+        <h1 class="nombre-live only-live">
+        <Image class="type-plate" src={cristhoferRansom} alt="Cristhofer Alegre" widths={[811, 1622]} sizes="811px" quality={84} inferSize loading="eager" fetchpriority="high" />
+        </h1>
+        <div class="only-capture capture-fill capture-nombre" role="img" aria-label="NOMBRE"></div>
+      </div>
+      <div class="r-tagline">
+        <p class="tagline-hit only-live scrap-in" style="--d:70">
+          <span class="sr-only">diseño + desarrollo + dirección</span>
+        </p>
+        <div class="only-capture capture-fill capture-tagline"></div>
+      </div>
+      <div class="r-contacto-label">
+        <a class="contacto-hit only-live" href="#contacto" aria-label="CONTACTO"></a>
+        <a class="only-capture capture-fill capture-contacto" href="#contacto" aria-label="CONTACTO"></a>
+      </div>
+      <div class="r-trabajo-title" id="trabajo">
+        <h2 class="trabajo-hit only-live scrap-in" style="--d:200">
+          <span class="sr-only">TRABAJO</span>
+        </h2>
+        <div class="only-capture capture-fill capture-trabajo"></div>
+      </div>
+      <div class="r-proyecto01-label">
+        <p class="work-label only-live scrap-in" style="--d:300">PROYECTO 01</p>
+        <div class="only-capture capture-fill capture-p01"></div>
+      </div>
+      <div class="r-proyecto02-label">
+        <p class="work-hit only-live scrap-in" style="--d:360">
+          <span class="sr-only">PROYECTO 02</span>
+        </p>
+        <div class="only-capture capture-fill capture-p02"></div>
+      </div>
+      <div class="r-camino-title">
+        <h2 class="card-title only-live scrap-in" id="camino" style="--d:420">CAMINO</h2>
+        <div class="only-capture capture-fill capture-camino"></div>
+      </div>
+      <div class="r-estudio-block">
+        <p class="mini only-live scrap-in" style="--d:470">
+          <strong>Estudio</strong>
+          <span class="rule">PUCP</span>
+        </p>
+        <div class="only-capture capture-fill capture-estudio"></div>
+      </div>
+      <div class="r-rol-block">
+        <p class="mini only-live scrap-in" style="--d:510">
+          <strong>Rol</strong>
+          <span class="rule">IBM</span>
+        </p>
+        <div class="only-capture capture-fill capture-rol"></div>
+      </div>
+      <div class="r-skills-title">
+        <h2 class="card-title only-live scrap-in" id="skills" style="--d:480">SKILLS</h2>
+        <div class="only-capture capture-fill capture-skills"></div>
+      </div>
+      <div class="r-skill-cluster">
+        <p class="cluster only-live scrap-in" style="--d:530">Skill cluster</p>
+        <div class="only-capture capture-fill capture-cluster"></div>
+      </div>
+    </section>
+
+    <section class="more" aria-label="El resto de la mesa" hidden={captureHero}>
+      <article class="sheet pink">
+        <h2>Archivo de obra</h2>
+        <ol class="project-list">
+          {
+            rest.map((project) => (
+              <li>
+                <span>{project.id}</span>
+                <span>{project.title}</span>
+                <span>{project.status}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </article>
+
+      <article class="sheet">
+        <h2>Camino completo</h2>
+        <ol class="path-list">
+          {
+            camino.map((item) => (
+              <li>
+                <strong>
+                  {item.label} — {item.place}
+                </strong>
+                <p>{item.detail}</p>
+                <p>{item.dates}</p>
+                {item.note ? <p>{item.note}</p> : null}
+              </li>
+            ))
+          }
+        </ol>
+      </article>
+
+      <article class="sheet">
+        <h2>Skill cluster</h2>
+        <ul class="skill-list">
+          {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </article>
+
+      <article class="sheet" id="contacto">
+        <h2>Contacto</h2>
+        <div class="contact-row">
+          <a href={site.links.linkedin} rel="me" class="scrap-link">
+            <Image class="scrap-btn" src={linkedinScrap} alt="LinkedIn" widths={[384, 768]} sizes="240px" quality={78} inferSize loading="lazy" />
+          </a>
+          <a href={site.links.github} rel="me" class="scrap-link">
+            <Image class="scrap-btn" src={githubScrap} alt="GitHub · Irico17" widths={[384, 768]} sizes="240px" quality={78} inferSize loading="lazy" />
+          </a>
+        </div>
+        <p class="legal">{site.legalName}</p>
+      </article>
+    </section>
+  </main>
+</Base>

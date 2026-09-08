@@ -1,0 +1,390 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-09-08T05:09:02.887Z",
+  "comp": ".impeccable/mocks/pasteup-comp-b.png",
+  "direction": "481103a5",
+  "breakpoint": "1536x1024",
+  "artifact": null,
+  "phase": "review",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-09-08T05:09:02.887Z",
+      "closedAt": "2026-09-08T05:15:47.813Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable/mocks/pasteup-comp-b.png",
+        "at": "2026-09-08T05:15:47.813Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-09-08T05:15:47.825Z",
+      "closedAt": "2026-09-08T05:17:42.095Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "17 regions, 7 plates, 9 text regions measured",
+        "at": "2026-09-08T05:17:42.095Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "closed",
+      "openedAt": "2026-09-08T05:17:42.095Z",
+      "closedAt": "2026-09-08T05:39:32.138Z",
+      "attempts": 7,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "6/6 plates",
+        "at": "2026-09-08T05:39:32.138Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "closed",
+      "openedAt": "2026-09-08T05:39:32.138Z",
+      "closedAt": "2026-09-08T07:17:52.306Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "hero 79% (drift)",
+        "score": 0.7945,
+        "verdict": "drift",
+        "report": ".impeccable/review/diff/hero/report.json",
+        "sideBySide": "C:/Users/Irico/Documents/portfolio-website/.impeccable/review/diff/hero/side-by-side.png",
+        "worst": [
+          "paper-ground drift 75%",
+          "trabajo-sheet drift 75%",
+          "proyecto01-strip drift 77%"
+        ],
+        "worstIds": [
+          "paper-ground",
+          "trabajo-sheet",
+          "proyecto01-strip"
+        ],
+        "worstCrops": [
+          {
+            "id": "paper-ground",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.7509,
+              "structure": 0.5638,
+              "color": 0.7611,
+              "colorIntersection": 0.7095,
+              "paletteMatch": 0.7889,
+              "detail": 0.7999,
+              "detailRaw": 0.7999,
+              "detailAdded": 0,
+              "bands": 0
+            },
+            "file": ".impeccable/review/diff/hero/regions/paper-ground.png"
+          },
+          {
+            "id": "trabajo-sheet",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.7537,
+              "structure": 0.677,
+              "color": 0.9195,
+              "colorIntersection": 0.8339,
+              "paletteMatch": 0.9656,
+              "detail": 0.7342,
+              "detailRaw": 0.7446,
+              "detailAdded": 0.0208,
+              "bands": 0.6701
+            },
+            "file": ".impeccable/review/diff/hero/regions/trabajo-sheet.png"
+          },
+          {
+            "id": "proyecto01-strip",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.7657,
+              "structure": 0.8075,
+              "color": 0.8406,
+              "colorIntersection": 0.7141,
+              "paletteMatch": 0.9088,
+              "detail": 0.7315,
+              "detailRaw": 0.7315,
+              "detailAdded": 0,
+              "bands": 0.6
+            },
+            "file": ".impeccable/review/diff/hero/regions/proyecto01-strip.png"
+          }
+        ],
+        "regionVerdicts": {
+          "paper-ground": "drift",
+          "nombre-ransom": "match",
+          "tagline": "match",
+          "contacto-stamp": "match",
+          "contacto-label": "match",
+          "trabajo-sheet": "drift",
+          "trabajo-title": "match",
+          "proyecto01-strip": "drift",
+          "proyecto01-label": "match",
+          "proyecto02-label": "match",
+          "camino-card": "match",
+          "camino-title": "match",
+          "estudio-block": "match",
+          "rol-block": "match",
+          "skills-scrap": "drift",
+          "skills-title": "match",
+          "skill-cluster": "match"
+        },
+        "at": "2026-09-08T07:17:52.305Z"
+      },
+      "forced": null,
+      "readingsSeen": {
+        "text proyecto02-label: cap height 111.5px in the build, 89px in the comp (+25%); set font-size so the cap height renders at 89px": 1,
+        "text camino-title: cap height 62.7px in the build, 40px in the comp (+57%); set font-size so the cap height renders at 40px": 1,
+        "text tagline: ink is #a29d97 in the build, #222222 in the comp; use the comp's colour": 1,
+        "text trabajo-title: ink is #a19b96 in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #a39d97 in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #59524b in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text camino-title: ink is #57514a in the build, #19191a in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #504b45 in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text skills-title: ink is #310813 in the build, #1e1f1f in the comp; use the comp's colour": 1,
+        "text proyecto02-label: its first line starts 92px lower than in the comp (92px vs 0px into the region box); the spacing above it is too large": 1,
+        "text proyecto02-label: the face renders 310% heavier than the comp's (ink density 0.42 vs 0.10); drop a weight step or use the ranked face": 1,
+        "text proyecto01-label: ink is #a49e98 in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #5a534c in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text skills-title: ink is #68192a in the build, #1e1f1f in the comp; use the comp's colour": 1,
+        "text skill-cluster: ink is #44131a in the build, #2e2f2f in the comp; use the comp's colour": 1,
+        "text proyecto02-label: cap height 64.3px in the build, 89px in the comp (-28%); set font-size so the cap height renders at 89px": 1,
+        "text camino-title: the face renders 582% heavier than the comp's (ink density 0.55 vs 0.08); drop a weight step or use the ranked face": 1,
+        "text proyecto01-label: ink is #272726 in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #232222 in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #655e5d in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text camino-title: its first line starts 17px lower than in the comp (18px vs 1px into the region box); the spacing above it is too large": 1,
+        "text proyecto02-label: cap height 37.2px in the build, 89px in the comp (-58%); set font-size so the cap height renders at 89px": 1,
+        "text camino-title: cap height 57px in the build, 40px in the comp (+43%); set font-size so the cap height renders at 40px": 1,
+        "text trabajo-title: ink is #c5c0be in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #c0bab7 in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #2e2e2e in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text camino-title: ink is #e84878 in the build, #19191a in the comp; use the comp's colour": 1,
+        "text rol-block: ink is #f8f8f8 in the build, #18191a in the comp; use the comp's colour": 4,
+        "text skills-title: ink is #585848 in the build, #1e1f1f in the comp; use the comp's colour": 1,
+        "text camino-title: cap height 20.9px in the build, 40px in the comp (-48%); set font-size so the cap height renders at 40px": 1,
+        "text proyecto02-label: the face renders 221% heavier than the comp's (ink density 0.33 vs 0.10); drop a weight step or use the ranked face": 1,
+        "text proyecto01-label: ink is #222222 in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #191919 in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #948d8a in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text skill-cluster: ink is #c9c5c1 in the build, #2e2f2f in the comp; use the comp's colour": 1,
+        "text proyecto02-label: cap height 160.7px in the build, 89px in the comp (+81%); set font-size so the cap height renders at 89px": 1,
+        "text proyecto01-label: ink is #303030 in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #363635 in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #68685e in the build, #090a0a in the comp; use the comp's colour": 2,
+        "text skills-title: ink is #e43f75 in the build, #1e1f1f in the comp; use the comp's colour": 1,
+        "text proyecto02-label: cap height 145.8px in the build, 89px in the comp (+64%); set font-size so the cap height renders at 89px": 1,
+        "text camino-title: cap height 59.9px in the build, 40px in the comp (+50%); set font-size so the cap height renders at 40px": 1,
+        "text proyecto01-label: ink is #2f2f2f in the build, #e74777 in the comp; use the comp's colour": 2,
+        "text proyecto02-label: ink is #363636 in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: the face renders 823% heavier than the comp's (ink density 0.94 vs 0.10); drop a weight step or use the ranked face": 1,
+        "text proyecto01-label: ink is #3f3f3f in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #404040 in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #98948e in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text camino-title: cap height 25.5px in the build, 40px in the comp (-36%); set font-size so the cap height renders at 40px": 2,
+        "text nombre-ransom: ink is #e84878 in the build, #232425 in the comp; use the comp's colour": 1,
+        "text tagline: ink is #e74878 in the build, #222222 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #313131 in the build, #e74777 in the comp; use the comp's colour": 2,
+        "text nombre-ransom: ink is #f8f8f8 in the build, #232425 in the comp; use the comp's colour": 3,
+        "text trabajo-title: ink is #f7f8f8 in the build, #232424 in the comp; use the comp's colour": 3,
+        "text proyecto01-label: ink is #f6f8f8 in the build, #e74777 in the comp; use the comp's colour": 3,
+        "text estudio-block: ink is #a19d96 in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text camino-title: cap height 30.8px in the build, 40px in the comp (-23%); set font-size so the cap height renders at 40px": 1,
+        "text trabajo-title: ink is #e9417a in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #c3bfba in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #bbb7b1 in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text skills-title: ink is #ba385d in the build, #1e1f1f in the comp; use the comp's colour": 1,
+        "text trabajo-title: ink is #d3163a in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #191818 in the build, #e74777 in the comp; use the comp's colour": 2,
+        "text trabajo-title: ink is #d3173a in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #3c081b in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text trabajo-title: ink is #f43775 in the build, #232424 in the comp; use the comp's colour": 1,
+        "text trabajo-title: ink is #ea427a in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #42153d in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text skills-title: ink is #d83b6f in the build, #1e1f1f in the comp; use the comp's colour": 3,
+        "text camino-title: its first line starts 18px lower than in the comp (19px vs 1px into the region box); the spacing above it is too large": 1,
+        "text camino-title: cap height 56px in the build, 40px in the comp (+40%); set font-size so the cap height renders at 40px": 1,
+        "text trabajo-title: ink is #e84878 in the build, #232424 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #3a3a3a in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #797673 in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text proyecto02-label: cap height 41px in the build, 89px in the comp (-54%); set font-size so the cap height renders at 89px": 2,
+        "text trabajo-title: ink is #eb427b in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #c8c7be in the build, #e74777 in the comp; use the comp's colour": 2,
+        "text proyecto02-label: ink is #c3bfb9 in the build, #e34474 in the comp; use the comp's colour": 2,
+        "text estudio-block: ink is #867f7c in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text skills-title: ink is #df3a74 in the build, #1e1f1f in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #857e7b in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text skills-title: ink is #dd3c71 in the build, #1e1f1f in the comp; use the comp's colour": 1,
+        "text tagline: ink is #c7c6be in the build, #222222 in the comp; use the comp's colour": 1,
+        "text proyecto02-label: ink is #191a1a in the build, #e34474 in the comp; use the comp's colour": 2,
+        "text estudio-block: ink is #7a7775 in the build, #090a0a in the comp; use the comp's colour": 2,
+        "text tagline: ink is #c8c7bf in the build, #222222 in the comp; use the comp's colour": 2,
+        "text proyecto02-label: cap height 46px in the build, 89px in the comp (-48%); set font-size so the cap height renders at 89px": 1,
+        "text proyecto02-label: ink is #1a1a1a in the build, #e34474 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #736f6f in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #c3c2c0 in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #bdb8b3 in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text camino-title: the face renders 275% heavier than the comp's (ink density 0.30 vs 0.08); drop a weight step or use the ranked face": 2,
+        "text trabajo-title: ink is #e93a79 in the build, #232424 in the comp; use the comp's colour": 3,
+        "text proyecto01-label: ink is #d97697 in the build, #e74777 in the comp; use the comp's colour": 6,
+        "text estudio-block: ink is #bbb8b3 in the build, #090a0a in the comp; use the comp's colour": 2,
+        "text camino-title: cap height 26.5px in the build, 40px in the comp (-34%); set font-size so the cap height renders at 40px": 1,
+        "text tagline: ink is #d5d3d2 in the build, #222222 in the comp; use the comp's colour": 3,
+        "text trabajo-title: ink is #cccac7 in the build, #232424 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #bdb9b4 in the build, #090a0a in the comp; use the comp's colour": 2,
+        "text camino-title: cap height 17.9px in the build, 40px in the comp (-55%); set font-size so the cap height renders at 40px": 1,
+        "text trabajo-title: ink is #e84979 in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #c4c1bd in the build, #e74777 in the comp; use the comp's colour": 1,
+        "text camino-title: the face renders 270% heavier than the comp's (ink density 0.30 vs 0.08); drop a weight step or use the ranked face": 1,
+        "text camino-title: the face renders 229% heavier than the comp's (ink density 0.26 vs 0.08); drop a weight step or use the ranked face": 1,
+        "text trabajo-title: ink is #d2d1cf in the build, #232424 in the comp; use the comp's colour": 1,
+        "text camino-title: ink is #5c5b59 in the build, #19191a in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #c9c6c2 in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text camino-title: the face renders 273% heavier than the comp's (ink density 0.30 vs 0.08); drop a weight step or use the ranked face": 1,
+        "text tagline: ink is #d4d3d1 in the build, #222222 in the comp; use the comp's colour": 1,
+        "text trabajo-title: ink is #cfccca in the build, #232424 in the comp; use the comp's colour": 1,
+        "text estudio-block: ink is #c8c6c2 in the build, #090a0a in the comp; use the comp's colour": 1,
+        "text camino-title: cap height 18.1px in the build, 40px in the comp (-55%); set font-size so the cap height renders at 40px": 1,
+        "text trabajo-title: ink is #cdc9c5 in the build, #232424 in the comp; use the comp's colour": 1,
+        "text proyecto01-label: ink is #c6c2be in the build, #e74777 in the comp; use the comp's colour": 1
+      },
+      "records": 36,
+      "history": [
+        {
+          "at": "2026-09-08T07:17:52.305Z",
+          "score": 0.7945,
+          "worstIds": [
+            "paper-ground",
+            "trabajo-sheet",
+            "proyecto01-strip"
+          ],
+          "regionVerdicts": {
+            "paper-ground": "drift",
+            "nombre-ransom": "match",
+            "tagline": "match",
+            "contacto-stamp": "match",
+            "contacto-label": "match",
+            "trabajo-sheet": "drift",
+            "trabajo-title": "match",
+            "proyecto01-strip": "drift",
+            "proyecto01-label": "match",
+            "proyecto02-label": "match",
+            "camino-card": "match",
+            "camino-title": "match",
+            "estudio-block": "match",
+            "rol-block": "match",
+            "skills-scrap": "drift",
+            "skills-title": "match",
+            "skill-cluster": "match"
+          },
+          "artifactHash": null
+        }
+      ]
+    },
+    "sections": {
+      "status": "closed",
+      "openedAt": "2026-09-08T07:17:52.306Z",
+      "closedAt": "2026-09-08T07:19:26.038Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-09-08T07:19:26.038Z"
+      },
+      "forced": null
+    },
+    "motion": {
+      "status": "closed",
+      "openedAt": "2026-09-08T07:19:26.038Z",
+      "closedAt": "2026-09-08T07:19:35.121Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-09-08T07:19:35.121Z"
+      },
+      "forced": null
+    },
+    "responsive": {
+      "status": "closed",
+      "openedAt": "2026-09-08T07:19:35.121Z",
+      "closedAt": "2026-09-08T07:21:05.478Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "desktop 77% (drift)",
+        "score": 0.7729,
+        "sideBySide": "C:/Users/Irico/Documents/portfolio-website/.impeccable/review/diff/desktop/side-by-side.png",
+        "at": "2026-09-08T07:21:05.478Z"
+      },
+      "forced": null
+    },
+    "review": {
+      "status": "closed",
+      "openedAt": "2026-09-08T07:21:05.479Z",
+      "closedAt": "2026-09-08T08:08:17.645Z",
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": {
+    "disposition": "ship",
+    "at": "2026-09-08T08:08:17.645Z",
+    "phaseAtFinish": "review"
+  },
+  "plates": {
+    "paper-ground": {
+      "status": "ok",
+      "score": 0.9958,
+      "size": "154x102"
+    },
+    "contacto-stamp": {
+      "status": "ok",
+      "score": 0.479,
+      "size": "1536x1024"
+    },
+    "trabajo-sheet": {
+      "status": "ok",
+      "score": 0.4391,
+      "size": "1536x1024"
+    },
+    "proyecto01-strip": {
+      "status": "ok",
+      "score": 0.5159,
+      "size": "1536x1024"
+    },
+    "camino-card": {
+      "status": "ok",
+      "score": 0.5447,
+      "size": "1536x1024"
+    },
+    "skills-scrap": {
+      "status": "ok",
+      "score": 0.5275,
+      "size": "1536x1024"
+    }
+  }
+}

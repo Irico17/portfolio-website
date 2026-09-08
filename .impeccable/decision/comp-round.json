@@ -1,0 +1,49 @@
+{
+  "title": "Elige la composición",
+  "question": "Mesa de paste-up con los tonos del quality bar. ¿Cuál de estas tres composiciones construimos?",
+  "options": [
+    {
+      "id": "comp-a",
+      "label": "Nombre a sangrado",
+      "kicker": "COMPOSITION",
+      "lineage": "ransom headline + rail + columna de scraps",
+      "thesis": "NOMBRE es el paste más grande; Trabajo, Camino y Skills cuelgan a la derecha como notas.",
+      "palette": ["#E7E2D6", "#14110E", "#FF2D7B", "#3A2F6B"],
+      "materials": ["papel xerox", "tóner", "rosa day-glo", "halftone"],
+      "viewport": "Rail typewriter a la izquierda, ransom NOMBRE al centro, Proyecto 01 / Estudio / rol / Skill cluster a la derecha, Contacto es el único bloque rosa.",
+      "risk": "Si el nombre come todo el frame, el recruiter no ve trabajo en el primer segundo.",
+      "comp": ".impeccable/mocks/pasteup-comp-a.png"
+    },
+    {
+      "id": "comp-b",
+      "label": "Hojas grapadas",
+      "kicker": "COMPOSITION",
+      "lineage": "mesa de paste-up vista desde arriba",
+      "thesis": "La página es un fajo de hojas: cada sección es una hoja slappeada, la más grande es Trabajo.",
+      "palette": ["#E7E2D6", "#14110E", "#FF2D7B", "#3A2F6B"],
+      "materials": ["grapas", "generaciones xerox", "cinta", "bordes rasgados"],
+      "viewport": "NOMBRE y Contacto en la hoja de arriba; Trabajo (Proyecto 01) es la hoja mayor; Camino y Skills más abajo, más chicas.",
+      "risk": "Puede sentirse más zine que portafolio si las hojas no dejan un orden de lectura único.",
+      "comp": ".impeccable/mocks/pasteup-comp-b.png"
+    },
+    {
+      "id": "comp-c",
+      "label": "La obra lidera",
+      "kicker": "COMPOSITION",
+      "lineage": "featured plate + lista tipo setlist",
+      "thesis": "Proyecto 01 ocupa más de la mitad del viewport; el resto es una lista typewriter.",
+      "palette": ["#E7E2D6", "#14110E", "#FF2D7B", "#3A2F6B"],
+      "materials": ["placa halftone", "cinta", "sello rosa", "reglas finas"],
+      "viewport": "Placa enorme de Proyecto 01 a la izquierda; a la derecha NOMBRE, Estudio / rol, Skill cluster; Contacto es el sello rosa abajo.",
+      "risk": "El placeholder de obra no puede fingir un caso real; si la placa miente, el brief se rompe.",
+      "comp": ".impeccable/mocks/pasteup-comp-c.png"
+    }
+  ],
+  "reroll": false,
+  "steer": true,
+  "canon": false,
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  }
+}
