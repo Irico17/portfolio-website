@@ -363,8 +363,32 @@ a {
   z-index: 8;
 }
 
+.r-scrap-halftone {
+  right: var(--bleed);
+  top: calc(-40 * var(--u));
+  width: calc(150 * var(--u));
+  height: calc(204 * var(--u));
+  z-index: 3;
+}
+
+.r-scrap-halftone .plate {
+  transform: rotate(2.4deg) scaleX(-1);
+}
+
+.r-scrap-torn {
+  left: calc(1050 * var(--u));
+  top: calc(26 * var(--u));
+  width: calc(301 * var(--u));
+  height: calc(118 * var(--u));
+  z-index: 3;
+}
+
+.r-scrap-torn .plate {
+  transform: rotate(-2.2deg) scale(1.04);
+}
+
 .r-contacto-stamp {
-  right: calc(var(--bleed) + 60 * var(--u));
+  right: calc(var(--bleed) + 150 * var(--u));
   top: calc(40 * var(--u));
   width: calc(289 * var(--u));
   height: calc(230 * var(--u));
@@ -649,7 +673,9 @@ a {
 
   .r-vinyl,
   .r-biro-frame,
-  .r-biro-arrow {
+  .r-biro-arrow,
+  .r-scrap-halftone,
+  .r-scrap-torn {
     display: none;
   }
 }
@@ -908,22 +934,22 @@ a {
 .slap,
 .scrap-in {
   --d: 0;
-  animation: slap 620ms var(--ease-out) calc(var(--d) * 1ms) both;
+  animation: slap 620ms var(--ease-out) calc(var(--d) * 1ms) backwards;
 }
 
 .stamp-slap {
   --d: 0;
-  animation: stamp-slap 620ms var(--ease-out) calc(var(--d) * 1ms) both;
+  animation: stamp-slap 620ms var(--ease-out) calc(var(--d) * 1ms) backwards;
 }
 
 .xerox {
   animation:
     slap 620ms var(--ease-out) calc(var(--d) * 1ms) both,
-    xerox 720ms var(--ease-out) calc(var(--d) * 1ms + 280ms) both;
+    xerox 720ms var(--ease-out) calc(var(--d) * 1ms + 280ms) backwards;
 }
 
 .paste-headline span {
-  animation: letter-settle 480ms var(--ease-out) calc(40ms + var(--i, 0) * 45ms) both;
+  animation: letter-settle 480ms var(--ease-out) calc(40ms + var(--i, 0) * 45ms) backwards;
 }
 
 @keyframes slap {
@@ -972,18 +998,34 @@ a {
 @media (hover: hover) and (pointer: fine) {
   .board a,
   .board button {
-    transition: transform 180ms var(--ease-out), filter 180ms ease;
+    --hov: -1.7deg;
+    transform-origin: 24% 76%;
+    transition:
+      transform 190ms var(--ease-out),
+      filter 190ms var(--ease-out);
+  }
+
+  .board .r-proyecto01-label,
+  .board .r-camino-title,
+  .board .r-skill-cluster {
+    --hov: 1.7deg;
   }
 
   .board a:hover,
-  .board button:hover {
-    transform: translateY(-0.35%) rotate(-0.5deg) scale(1.012);
-    filter: contrast(1.12);
+  .board button:hover,
+  .board a:focus-visible,
+  .board button:focus-visible {
+    z-index: 11;
+    transform: translate3d(0, -1.3%, 0) rotate(var(--hov)) scale(1.035);
+    filter:
+      drop-shadow(0 calc(7 * var(--u)) calc(10 * var(--u)) rgb(20 16 14 / 0.38))
+      contrast(1.14);
   }
 
   .board a:active,
   .board button:active {
-    transform: scale(0.995);
+    transform: translate3d(0, -0.2%, 0) rotate(calc(var(--hov) * 0.3)) scale(1.004);
+    filter: contrast(1.2);
   }
 
   .contact-row a {

@@ -8,6 +8,8 @@ import { site, camino, skills, projects } from "../data/site";
 import trabajoSheet from "../assets/plates/desk-sheet.png";
 import biroFrame from "../assets/plates/biro-frame.png";
 import biroArrow from "../assets/plates/biro-arrow.png";
+import scrapHalftone from "../assets/plates/scrap-halftone.png";
+import scrapTorn from "../assets/plates/scrap-torn.png";
 import proyectoStrip from "../assets/plates/proyecto01-strip.png";
 import caminoCard from "../assets/plates/camino-card.png";
 import skillsScrap from "../assets/plates/skills-scrap.png";
@@ -53,6 +55,12 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
         </div>
 
         <div class="pack pack-contacto">
+          <div class="r-scrap-halftone slap" style="--d:150" aria-hidden="true">
+            <Image class="plate" src={scrapHalftone} alt="" widths={[250, 500]} sizes="12vw" quality={74} loading="eager" />
+          </div>
+          <div class="r-scrap-torn slap" style="--d:200" aria-hidden="true">
+            <Image class="plate" src={scrapTorn} alt="" widths={[400, 800]} sizes="20vw" quality={74} loading="eager" />
+          </div>
           <a class="r-contacto-stamp stamp-slap" style="--d:90" href="#contacto">
             <Image class="plate" src={contactoCut} alt="" widths={[400, 800]} sizes="18vw" quality={82} loading="eager" />
             <span class="sr-only">Contacto</span>

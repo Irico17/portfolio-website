@@ -182,6 +182,8 @@ Four inks on copy paper: toner, dust, day-glo pink, and the paper itself. Chroma
 
 The first viewport is the desk itself: `100% x 100dvh`, no letterboxing. On it sits one board of **1536 x 1024 design units** — the approved comp's own grid. One unit is `min(100cqh / 1024, 100cqw / 1536)`, so every scrap keeps the proportion it has in the comp and nothing is ever stretched to fit a window. The board widens to at most `1812u` (a 1.77 frame) and centers; past that the desk simply shows more surface.
 
+The top band is bracketed the way the comp brackets it: a dark torn scrap between the name and the stamp, and a halftone corner at the far right. Without them that band reads as empty paper, which is the one thing the comp never does.
+
 The desk under everything is the comp's own halftone and torn stock, tiled at 380px (desktop only — stacked, the packs carry the texture and the halftone would only fight the biro line). On top of it the work sheet bleeds edge to edge, and every sheet is pasted a degree or two off square: the tilt lives on the plate, not the box, so the slap keyframes keep the box transform. The comp's pen marks — the wireframe beside Trabajo, the arrow and asterisk past the strip — ship as their own alpha plates, because they carry more of the comp's feel than any texture does.
 
 Every scrap is placed in units, never in percentages of the window. Textures that must reach the screen edge (the work sheet, the camino card, the skills scrap) use `--bleed` — `(board width - 100cqw) / 2` — so they bleed to the frame while the type packs stay anchored to the board's left or right. That is what makes the collage spread on a wide monitor instead of squashing.
@@ -233,6 +235,9 @@ Flyer hardware: stamps, glued letters, xerox pages, typed labels. No form kit. N
 
 ### Ransom name
 Cut-letter identity, shipped as one plate (`cristhofer-ransom.png`): per-letter rotation, scrap fill, invert and one hot-pink tile. It is the largest thing on the desk — 356u tall, roughly 43-48% of a desktop window — and it is the first scrap to land (40ms). Reduced motion holds the settled collage.
+
+### Hover
+A scrap that answers the pointer peels off the table: up 1.3%, rotated 1.7deg (alternating direction, the way a hand would have pasted it), scaled 1.035, with a real drop shadow underneath — 190ms on `--ease-out`, transform-origin at 24%/76% so it pivots like a pinned corner. Focus-visible gets the same treatment. Entrance animations must use `animation-fill-mode: backwards`, never `both`: a filled animation keeps its `transform` applied and outranks the hover transition, which silently kills every hover on the board. `scripts/shot-hover.mjs` fails if a control stops reacting.
 
 ### Slap
 Every scrap arrives once, on load: `translate3d(0, -2.4%, 0) rotate(-1.1deg) scale(1.014)` to rest over 620ms on `--ease-out`, staggered by `--d` in the order a hand would paste them (name, stamp, sheet, tagline, TRABAJO, strip, slots, cards). The stamp gets its own harder drop (`stamp-slap`, -9deg) and the Proyecto 01 strip a `xerox` contrast pulse — the moment the scrap is copied darker. Nothing loops except the record. Reduced motion ships with it.
