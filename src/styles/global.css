@@ -12,6 +12,7 @@
   --font-display: "Tilt Prism", "Times New Roman", serif;
   --font-poster: "Archivo Black", "Arial Black", sans-serif;
   --font-body: "Intel One Mono", "Courier New", monospace;
+  --halftone: url("/portfolio-website/sheets/halftone.webp");
   --xerox-sheet: url("/portfolio-website/sheets/xerox-sheet.webp");
   --xerox-pink: url("/portfolio-website/sheets/xerox-pink.webp");
 }
@@ -96,16 +97,10 @@ a {
   height: 100dvh;
   overflow: hidden;
   container-type: size;
-  /* the desk itself: out-of-focus copy stock, lit from the top left.
-     A photo tile would repeat; grain comes from the overlay below. */
-  background-color: var(--paper);
-  background-image: radial-gradient(
-    128% 96% at 28% 16%,
-    #dbd7d2 0%,
-    #cfcbc7 46%,
-    #c1bdb9 78%,
-    #b7b3af 100%
-  );
+  /* the desk under everything: the comp's own halftone and torn stock */
+  background-color: #b9b5b1;
+  background-image: var(--halftone);
+  background-size: 380px 252px;
 }
 
 .comp-frame::after {
@@ -198,17 +193,31 @@ a {
 .r-trabajo-sheet {
   left: var(--bleed);
   right: var(--bleed);
-  top: calc(285 * var(--u));
-  height: calc(630 * var(--u));
+  top: calc(-24 * var(--u));
+  height: calc(940 * var(--u));
   z-index: 1;
 }
 
 .r-trabajo-sheet .plate {
   object-fit: cover;
   object-position: center;
-  /* flipped so the sheet's own pink fragment falls under the camino
-     card instead of doubling the Proyecto 01 strip */
-  transform: scaleX(-1);
+  transform: rotate(-0.9deg) scale(1.05);
+}
+
+.r-camino-card .plate {
+  transform: rotate(-1.6deg) scale(1.06);
+}
+
+.r-skills-scrap .plate {
+  transform: rotate(1.4deg) scale(1.06);
+}
+
+.r-proyecto01-strip .plate {
+  transform: rotate(-0.8deg) scale(1.03);
+}
+
+.r-nombre-ransom .plate {
+  transform: rotate(-1.3deg);
 }
 
 /* the plates are rectangles; a sheet reads as paper on a desk only if
@@ -230,31 +239,47 @@ a {
 
 .r-proyecto01-strip {
   left: calc(520 * var(--u));
-  top: calc(640 * var(--u));
-  width: calc(778 * var(--u));
-  height: calc(130 * var(--u));
+  top: calc(636 * var(--u));
+  width: calc(950 * var(--u));
+  height: calc(159 * var(--u));
   z-index: 2;
+}
+
+.r-biro-frame {
+  left: calc(300 * var(--u));
+  top: calc(600 * var(--u));
+  width: calc(132 * var(--u));
+  height: calc(135 * var(--u));
+  z-index: 5;
+}
+
+.r-biro-arrow {
+  left: calc(1500 * var(--u));
+  top: calc(640 * var(--u));
+  width: calc(102 * var(--u));
+  height: calc(86 * var(--u));
+  z-index: 5;
 }
 
 .r-trabajo-title {
   left: calc(430 * var(--u));
-  top: calc(445 * var(--u));
-  width: calc(666 * var(--u));
-  height: calc(180 * var(--u));
+  top: calc(426 * var(--u));
+  width: calc(740 * var(--u));
+  height: calc(200 * var(--u));
   z-index: 6;
 }
 
 .r-proyecto01-label {
   left: calc(640 * var(--u));
-  top: calc(679 * var(--u));
+  top: calc(660 * var(--u));
   width: calc(301 * var(--u));
   height: calc(52 * var(--u));
   z-index: 7;
 }
 
 .r-proyecto02-label {
-  left: calc(760 * var(--u));
-  top: calc(800 * var(--u));
+  left: calc(830 * var(--u));
+  top: calc(760 * var(--u));
   width: calc(211 * var(--u));
   height: calc(48 * var(--u));
   z-index: 7;
@@ -300,7 +325,7 @@ a {
   right: var(--bleed);
   top: calc(745 * var(--u));
   width: calc(751 * var(--u));
-  height: calc(295 * var(--u));
+  height: calc(300 * var(--u));
   z-index: 3;
 }
 
@@ -325,16 +350,16 @@ a {
 .r-nombre-ransom {
   left: calc(215 * var(--u));
   top: calc(24 * var(--u));
-  width: calc(789 * var(--u));
-  height: calc(356 * var(--u));
+  width: calc(776 * var(--u));
+  height: calc(350 * var(--u));
   z-index: 8;
 }
 
 .r-tagline {
   left: calc(215 * var(--u));
-  top: calc(392 * var(--u));
-  width: calc(334 * var(--u));
-  height: calc(40 * var(--u));
+  top: calc(382 * var(--u));
+  width: calc(284 * var(--u));
+  height: calc(34 * var(--u));
   z-index: 8;
 }
 
@@ -426,6 +451,10 @@ a {
   .comp-frame {
     height: auto;
     container-type: normal;
+    /* stacked, the packs carry all the texture; the halftone desk would
+       only fight the biro line and the stamp */
+    background-color: #c9c5c1;
+    background-image: none;
     padding: 0.9rem max(0.7rem, env(safe-area-inset-right)) 1.4rem
       max(0.7rem, env(safe-area-inset-left));
   }
@@ -446,6 +475,12 @@ a {
 
   .board img {
     max-width: 100%;
+  }
+
+  /* stacked, the boxes are sized by aspect-ratio from the source plate
+     while the served asset rounds a pixel or two — contain absorbs it */
+  .board .plate {
+    object-fit: contain;
   }
 
   .pack {
@@ -612,7 +647,9 @@ a {
     aspect-ratio: 439 / 81;
   }
 
-  .r-vinyl {
+  .r-vinyl,
+  .r-biro-frame,
+  .r-biro-arrow {
     display: none;
   }
 }

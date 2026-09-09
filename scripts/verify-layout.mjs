@@ -35,12 +35,25 @@ for (const [name, width, height] of sizes) {
       }
     const offscreen = boxes.filter((b) => !b.missing && (b.x < -4 || b.y < -4 || b.x + b.w > innerWidth + 4));
     const tiny = boxes.filter((b) => !b.missing && (b.w < 40 || b.h < 18));
+    // every plate box must match its image's own aspect, or object-fit:fill
+    // stretches the scrap
+    const stretched = [];
+    for (const img of document.querySelectorAll(".board .plate")) {
+      if (!img.naturalWidth || !img.offsetParent) continue;
+      const box = img.parentElement.getBoundingClientRect();
+      if (getComputedStyle(img).objectFit !== "fill") continue;
+      const want = img.naturalWidth / img.naturalHeight;
+      const got = box.width / box.height;
+      if (Math.abs(got - want) / want > 0.03)
+        stretched.push(`${img.parentElement.className.split(" ")[0]} ${got.toFixed(2)} vs ${want.toFixed(2)}`);
+    }
     return {
       hScroll: document.documentElement.scrollWidth - document.documentElement.clientWidth,
       missing: boxes.filter((b) => b.missing).map((b) => b.s),
       overlaps,
       offscreen: offscreen.map((b) => `${b.s} @${b.x},${b.y} ${b.w}x${b.h}`),
       tiny: tiny.map((b) => `${b.s} ${b.w}x${b.h}`),
+      stretched,
       name: boxes.find((b) => b.s === ".r-nombre-ransom"),
     };
   }, hot);
@@ -52,6 +65,7 @@ for (const [name, width, height] of sizes) {
   if (report.overlaps.length) console.log("  OVERLAP:", report.overlaps.join(" | "));
   if (report.offscreen.length) console.log("  OFFSCREEN:", report.offscreen.join(" | "));
   if (report.tiny.length) console.log("  TINY:", report.tiny.join(" | "));
+  if (report.stretched.length) console.log("  STRETCHED:", report.stretched.join(" | "));
   if (name === "laptop") {
     await page.click(".r-proyecto01-label");
     const open = await page.evaluate(() => {

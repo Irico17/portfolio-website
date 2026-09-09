@@ -5,7 +5,9 @@ import PasteHeadline from "../components/PasteHeadline.astro";
 import ProjectFlyer from "../components/ProjectFlyer.astro";
 import Vinyl from "../components/Vinyl.astro";
 import { site, camino, skills, projects } from "../data/site";
-import trabajoSheet from "../assets/plates/trabajo-sheet.png";
+import trabajoSheet from "../assets/plates/desk-sheet.png";
+import biroFrame from "../assets/plates/biro-frame.png";
+import biroArrow from "../assets/plates/biro-arrow.png";
 import proyectoStrip from "../assets/plates/proyecto01-strip.png";
 import caminoCard from "../assets/plates/camino-card.png";
 import skillsScrap from "../assets/plates/skills-scrap.png";
@@ -63,6 +65,12 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
           </div>
           <div class="r-proyecto01-strip slap xerox" style="--d:340">
             <Image class="plate" src={proyectoStrip} alt="" widths={[960, 1844]} sizes="52vw" quality={70} loading="eager" />
+          </div>
+          <div class="r-biro-frame slap" style="--d:500" aria-hidden="true">
+            <Image class="plate" src={biroFrame} alt="" widths={[198, 396]} sizes="7vw" quality={82} />
+          </div>
+          <div class="r-biro-arrow slap" style="--d:520" aria-hidden="true">
+            <Image class="plate" src={biroArrow} alt="" widths={[153, 306]} sizes="6vw" quality={82} />
           </div>
           <a class="r-trabajo-title slap" style="--d:300" href="#portafolio">
             <Image class="plate" src={trabajoWord} alt="" widths={[860, 1716]} sizes="38vw" quality={80} loading="eager" />
