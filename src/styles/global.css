@@ -96,6 +96,15 @@ a {
   background-size: 154px 102px;
 }
 
+@media (min-width: 861px) {
+  .comp-frame {
+    width: min(100vw, calc(100dvh * 1536 / 1024));
+    height: min(100dvh, calc(100vw * 1024 / 1536));
+    max-width: none;
+    aspect-ratio: auto;
+  }
+}
+
 .paper-bleed {
   position: absolute;
   inset: 0;
@@ -974,23 +983,31 @@ html.hero-capture .comp-frame .r-trabajo-title {
   }
 
   .comp-frame {
-    background: var(--paper);
-    aspect-ratio: auto;
+    width: 100%;
     height: auto;
+    max-width: none;
+    aspect-ratio: auto;
     overflow: visible;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nombre"
+      "contacto"
+      "tagline"
+      "trabajo"
+      "camino"
+      "skills";
+    gap: 1rem;
+    padding: 0.85rem 0.7rem 1.4rem;
+    background: var(--paper);
+  }
+
+  .comp-frame::after {
+    display: none;
   }
 
   .comp-frame > * {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: 100%;
-    max-width: 100%;
     min-width: 0;
-    height: auto;
   }
 
   .r-paper-ground,
@@ -998,121 +1015,201 @@ html.hero-capture .comp-frame .r-trabajo-title {
     display: none;
   }
 
+  .comp-frame [class^="r-"] {
+    overflow: visible;
+  }
+
+  .r-nombre-ransom,
+  .r-tagline,
+  .r-contacto-stamp,
   .r-trabajo-sheet,
-  .r-proyecto01-strip,
   .r-camino-card,
-  .r-skills-scrap,
-  .r-contacto-stamp {
-    display: block;
+  .r-skills-scrap {
+    position: relative;
+    left: auto;
+    top: auto;
     width: 100%;
     height: auto;
   }
 
-  .r-trabajo-sheet .plate {
-    height: 42vw;
-    max-height: 14rem;
-    object-fit: cover;
-  }
+  .r-trabajo-sheet { aspect-ratio: 1.25 / 1; }
+  .r-camino-card { aspect-ratio: 1.4 / 1; }
+  .r-skills-scrap { aspect-ratio: 1.5 / 1; }
 
-  .r-proyecto01-strip .plate {
-    height: 22vw;
-    max-height: 7.5rem;
-    object-fit: cover;
-  }
-
+  .r-trabajo-sheet .plate,
   .r-camino-card .plate,
-  .r-skills-scrap .plate,
-  .r-contacto-stamp .plate {
-    height: 48vw;
-    max-height: 16rem;
+  .r-skills-scrap .plate {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: left top;
   }
 
-  .r-nombre-ransom { order: 1; }
-  .r-contacto-stamp { order: 2; }
-  .r-contacto-label { order: 3; }
-  .r-tagline { order: 4; }
-  .r-trabajo-sheet { order: 5; }
-  .r-trabajo-title { order: 6; }
-  .r-proyecto01-strip { order: 7; }
-  .r-proyecto01-label { order: 8; }
-  .r-proyecto02-label { order: 9; }
-  .r-camino-card { order: 10; }
-  .r-camino-title { order: 11; }
-  .r-estudio-block,
-  .r-rol-block { order: 12; }
-  .r-skills-scrap { order: 13; }
-  .r-skills-title { order: 14; }
-  .r-skill-cluster { order: 15; }
+  .r-nombre-ransom { grid-area: nombre; }
+  .comp-frame .r-nombre-ransom,
+  .comp-frame .nombre-live.only-live {
+    height: auto;
+  }
 
-  .ink-plate,
-  .comp-frame img.ink-plate,
-  .type-plate,
-  .comp-frame img.type-plate,
-  .tagline-hit picture,
-  .trabajo-hit picture,
-  .work-hit picture,
-  .contacto-hit picture,
-  .nombre-live picture {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
+  .r-nombre-ransom img,
+  .nombre-live img,
+  .nombre-live .type-plate,
+  .comp-frame .r-nombre-ransom img.type-plate {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     object-position: left center;
   }
+  .r-tagline { grid-area: tagline; }
+  .r-contacto-stamp,
+  .r-contacto-label { grid-area: contacto; }
+  .r-trabajo-sheet,
+  .r-trabajo-title,
+  .r-proyecto01-strip,
+  .r-proyecto01-label,
+  .r-proyecto02-label { grid-area: trabajo; }
+  .r-camino-card,
+  .r-camino-title,
+  .r-estudio-block,
+  .r-rol-block { grid-area: camino; }
+  .r-skills-scrap,
+  .r-skills-title,
+  .r-skill-cluster { grid-area: skills; }
 
-  .r-tagline,
-  .comp-frame .r-tagline,
+  .r-contacto-label,
+  .r-trabajo-title,
+  .r-proyecto01-strip,
+  .r-proyecto01-label,
   .r-proyecto02-label,
+  .r-camino-title,
+  .r-estudio-block,
+  .r-rol-block,
+  .r-skills-title,
+  .r-skill-cluster {
+    position: absolute;
+    margin: 0;
+    height: auto;
+  }
+
+  .r-contacto-label {
+    left: 6%;
+    top: 22%;
+    width: 88%;
+    height: 56%;
+    min-height: 44px;
+    z-index: 4;
+  }
+
   .r-trabajo-title {
-    width: 100%;
+    left: 16%;
+    top: 4%;
+    width: 58%;
+    height: 42%;
+    z-index: 5;
+  }
+
+  .r-proyecto01-strip {
+    left: 0;
+    top: 40%;
+    width: 94%;
+    height: 30%;
+    z-index: 3;
   }
 
   .r-proyecto01-label {
-    margin-top: calc(-1 * min(22vw, 7.5rem));
-    height: min(22vw, 7.5rem);
+    left: 8%;
+    top: 40%;
+    width: 70%;
+    height: 30%;
     z-index: 6;
   }
 
-  .r-proyecto01-label .work-label {
-    height: 100%;
-    font-size: 1.05rem;
+  .r-proyecto02-label {
+    left: 8%;
+    top: 66%;
+    width: 56%;
+    height: 26%;
+    z-index: 6;
   }
 
-  .ink-hit.only-live {
-    min-height: 2.6rem;
+  .r-camino-title {
+    left: 8%;
+    top: 6%;
+    width: 42%;
+    height: 22%;
+    z-index: 5;
+  }
+
+  .r-estudio-block {
+    left: 12%;
+    top: 74%;
+    width: 32%;
+    height: 22%;
+    z-index: 5;
+  }
+
+  .r-rol-block {
+    left: 40%;
+    top: 28%;
+    width: 42%;
+    height: 48%;
+    z-index: 5;
+  }
+
+  .r-skills-title {
+    left: 38%;
+    top: 8%;
+    width: 48%;
+    height: 26%;
+    z-index: 5;
+  }
+
+  .r-skill-cluster {
+    left: 14%;
+    top: 40%;
+    width: 72%;
+    height: 46%;
+    z-index: 5;
+  }
+
+  .r-contacto-stamp .plate,
+  .nombre-live .type-plate {
+    width: 100%;
     height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
   }
 
-  .skills-hit { aspect-ratio: 573 / 124; }
-  .camino-hit { aspect-ratio: 320 / 111; }
-  .p01-hit { aspect-ratio: 579 / 100; }
-  .p02-hit { aspect-ratio: 480 / 109; }
-  .cluster-hit { aspect-ratio: 439 / 81; }
-  .estudio-hit,
-  .rol-hit { aspect-ratio: 426 / 216; }
+  .r-proyecto01-strip .plate,
+  .r-trabajo-title .type-plate,
+  .r-proyecto01-label .type-plate,
+  .r-proyecto02-label .type-plate,
+  .r-camino-title .type-plate,
+  .r-estudio-block .type-plate,
+  .r-rol-block .type-plate,
+  .r-skills-title .type-plate,
+  .r-skill-cluster .type-plate,
+  .trabajo-hit,
+  .ink-hit .type-plate {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .ink-hit.only-live,
+  .tagline-hit.only-live,
+  .trabajo-hit.only-live,
+  .contacto-hit.only-live {
+    width: 100%;
+    height: 100%;
+    min-height: 44px;
+  }
 
   .tagline-hit.only-live {
-    min-height: 2.8rem;
+    min-height: 2.6rem;
     aspect-ratio: 1429 / 171;
-    height: auto;
-  }
-
-  .trabajo-hit.only-live {
-    min-height: 5.5rem;
-    aspect-ratio: 1532 / 540;
-    height: auto;
-  }
-
-  .work-hit.only-live {
-    min-height: 3.5rem;
-    aspect-ratio: 1420 / 200;
-    height: auto;
-  }
-
-  .contacto-hit.only-live {
-    min-height: 44px;
-    aspect-ratio: 1260 / 656;
     height: auto;
   }
 
@@ -1127,58 +1224,47 @@ html.hero-capture .comp-frame .r-trabajo-title {
     width: auto;
   }
 
-  .trabajo-title,
-  .cut-word {
-    font-size: clamp(3rem, 16vw, 5.5rem);
+  .more {
+    padding-inline: 0.7rem;
   }
 
-  .tagline,
-  .work-label,
-  .card-title,
-  .cluster,
-  .mini {
-    font-size: 1.05rem;
+  .project-list li {
+    grid-template-columns: 3.2rem 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.35rem 0.6rem;
   }
 
-  .type-plate,
-  .comp-frame img.type-plate {
-    height: auto;
-    object-fit: contain;
-  }
-
-  .r-nombre-ransom,
-  .r-trabajo-title,
-  .r-contacto-label {
-    min-height: 3.5rem;
+  .project-list li .slot-status {
+    grid-column: 2;
   }
 }
 
 .scrap-in {
   --d: 0;
-  animation: slap 560ms var(--ease-out) calc(var(--d) * 1ms);
+  animation: slap 620ms var(--ease-out) calc(var(--d) * 1ms) both;
 }
 
 .r-contacto-label .stamp {
-  animation: stamp-slap 560ms var(--ease-out) calc(var(--d) * 1ms);
+  animation: stamp-slap 620ms var(--ease-out) calc(var(--d) * 1ms) both;
 }
 
 .xerox {
   animation:
-    slap 560ms var(--ease-out) 260ms,
-    xerox 780ms var(--ease-out) 520ms;
+    slap 620ms var(--ease-out) calc(var(--d) * 1ms) both,
+    xerox 720ms var(--ease-out) calc(var(--d) * 1ms + 280ms) both;
 }
 
 .paste-headline span {
-  animation: letter-settle 480ms var(--ease-out) calc(40ms + var(--i, 0) * 45ms);
+  animation: letter-settle 480ms var(--ease-out) calc(40ms + var(--i, 0) * 45ms) both;
 }
 
 .ransom span {
-  animation: letter-settle 480ms var(--ease-out) calc(40ms + var(--i, 0) * 55ms);
+  animation: letter-settle 480ms var(--ease-out) calc(40ms + var(--i, 0) * 55ms) both;
 }
 
 @keyframes stamp-slap {
   from {
-    transform: translateY(-16px) rotate(-12deg);
+    transform: translateY(-18%) rotate(-12deg);
     filter: contrast(1.45);
   }
   to {
@@ -1189,8 +1275,8 @@ html.hero-capture .comp-frame .r-trabajo-title {
 
 @keyframes slap {
   from {
-    transform: translateY(-14px) rotate(-1.15deg);
-    filter: contrast(1.38);
+    transform: translateY(-8%) rotate(-1.4deg);
+    filter: contrast(1.42);
   }
   to {
     transform: none;
