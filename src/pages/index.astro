@@ -2,23 +2,26 @@
 import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import PasteHeadline from "../components/PasteHeadline.astro";
+import ProjectFlyer from "../components/ProjectFlyer.astro";
+import Vinyl from "../components/Vinyl.astro";
 import { site, camino, skills, projects } from "../data/site";
-import paperGround from "../assets/plates/paper-ground.png";
-import contactoStamp from "../assets/plates/contacto-stamp.png";
 import trabajoSheet from "../assets/plates/trabajo-sheet.png";
 import proyectoStrip from "../assets/plates/proyecto01-strip.png";
 import caminoCard from "../assets/plates/camino-card.png";
 import skillsScrap from "../assets/plates/skills-scrap.png";
 import cristhoferRansom from "../assets/plates/cristhofer-ransom.png";
-import linkedinScrap from "../assets/plates/linkedin-scrap.png";
-import githubScrap from "../assets/plates/github-scrap.png";
-import skillsInk from "../assets/plates/skills-ink.png";
-import caminoInk from "../assets/plates/camino-ink.png";
+import taglineBiro from "../assets/plates/tagline-biro.png";
+import contactoCut from "../assets/plates/contacto-cut.png";
+import trabajoWord from "../assets/plates/trabajo-word.png";
 import proyecto01Ink from "../assets/plates/proyecto01-ink.png";
 import proyecto02Scrap from "../assets/plates/proyecto02-scrap.png";
-import clusterInk from "../assets/plates/cluster-ink.png";
+import caminoInk from "../assets/plates/camino-ink.png";
 import estudioInk from "../assets/plates/estudio-ink.png";
 import rolInk from "../assets/plates/rol-ink.png";
+import skillsInk from "../assets/plates/skills-ink.png";
+import clusterInk from "../assets/plates/cluster-ink.png";
+import linkedinScrap from "../assets/plates/linkedin-scrap.png";
+import githubScrap from "../assets/plates/github-scrap.png";
 
 const rest = projects;
 const captureHero = Astro.url.searchParams.get("capture") === "hero";
@@ -27,116 +30,109 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
 <Base>
   <main class="desk">
     <section class="comp-frame" aria-label="Mesa de paste-up">
-      <div class="paper-bleed" aria-hidden="true"></div>
-      <div class="r-paper-ground">
-        <Image class="plate paper-tile" src={paperGround} alt="" widths={[616, 1232]} sizes="154px" quality={82} inferSize loading="eager" />
-      </div>
-      <div class="r-trabajo-sheet scrap-in xerox" style="--d:160">
-        <Image class="plate" src={trabajoSheet} alt="" widths={[980, 1382]} sizes="90vw" quality={72} inferSize loading="eager" />
-      </div>
-      <div class="r-contacto-stamp scrap-in" style="--d:80">
-        <Image class="plate" src={contactoStamp} alt="" widths={[692, 1384]} sizes="30vw" quality={78} inferSize loading="eager" />
-      </div>
-      <div class="r-proyecto01-strip scrap-in xerox" style="--d:260">
-        <Image class="plate" src={proyectoStrip} alt="" widths={[640, 980]} sizes="80vw" quality={70} inferSize loading="eager" />
-      </div>
-      <div class="r-camino-card scrap-in" style="--d:400">
-        <Image class="plate" src={caminoCard} alt="" widths={[640, 1075]} sizes="70vw" quality={70} inferSize loading="eager" />
-      </div>
-      <div class="r-skills-scrap scrap-in" style="--d:460">
-        <Image class="plate" src={skillsScrap} alt="" widths={[480, 768]} sizes="50vw" quality={70} inferSize loading="eager" />
-      </div>
+      <div class="board">
+        <div class="pack pack-name">
+          <h1 class="r-nombre-ransom slap" style="--d:40">
+            <Image
+              class="plate"
+              src={cristhoferRansom}
+              alt="Cristhofer Alegre"
+              widths={[811, 1622]}
+              sizes="52vw"
+              quality={84}
+              loading="eager"
+              fetchpriority="high"
+            />
+          </h1>
+          <p class="r-tagline slap" style="--d:260">
+            <Image class="plate" src={taglineBiro} alt="" widths={[715, 1429]} sizes="24vw" quality={82} loading="eager" />
+            <span class="sr-only">{site.roleLine}</span>
+          </p>
+        </div>
 
-      <div class="r-nombre-ransom scrap-in" style="--d:40">
-        <h1 class="nombre-live only-live">
-        <Image class="type-plate" src={cristhoferRansom} alt="Cristhofer Alegre" widths={[811, 1622]} sizes="811px" quality={84} inferSize loading="eager" fetchpriority="high" />
-        </h1>
-        <div class="only-capture capture-fill capture-nombre" role="img" aria-label="NOMBRE"></div>
-      </div>
-      <div class="r-tagline">
-        <p class="tagline-hit only-live scrap-in" style="--d:70">
-          <span class="sr-only">diseño + desarrollo + dirección</span>
-        </p>
-        <div class="only-capture capture-fill capture-tagline"></div>
-      </div>
-      <div class="r-contacto-label">
-        <a class="contacto-hit only-live" href="#contacto" aria-label="CONTACTO"></a>
-        <a class="only-capture capture-fill capture-contacto" href="#contacto" aria-label="CONTACTO"></a>
-      </div>
-      <div class="r-trabajo-title" id="trabajo">
-        <h2 class="trabajo-hit only-live scrap-in" style="--d:200">
-          <span class="sr-only">TRABAJO</span>
-        </h2>
-        <div class="only-capture capture-fill capture-trabajo"></div>
-      </div>
-      <div class="r-proyecto01-label">
-        <p class="ink-hit p01-hit only-live scrap-in" style="--d:300">
-          <Image class="type-plate" src={proyecto01Ink} alt="" widths={[579, 1158]} sizes="50vw" quality={84} inferSize />
-          <span class="sr-only">PROYECTO 01</span>
-        </p>
-        <div class="only-capture capture-fill capture-p01"></div>
-      </div>
-      <div class="r-proyecto02-label">
-        <p class="ink-hit p02-hit only-live scrap-in" style="--d:360">
-          <Image class="type-plate" src={proyecto02Scrap} alt="" widths={[520, 1040]} sizes="40vw" quality={84} inferSize />
-          <span class="sr-only">PROYECTO 02</span>
-        </p>
-        <div class="only-capture capture-fill capture-p02"></div>
-      </div>
-      <div class="r-camino-title">
-        <h2 class="ink-hit camino-hit only-live scrap-in" id="camino" style="--d:420">
-          <Image class="type-plate" src={caminoInk} alt="" widths={[320, 640]} sizes="20vw" quality={84} inferSize />
-          <span class="sr-only">CAMINO</span>
-        </h2>
-        <div class="only-capture capture-fill capture-camino"></div>
-      </div>
-      <div class="r-estudio-block">
-        <p class="ink-hit estudio-hit only-live scrap-in" style="--d:470">
-          <Image class="type-plate" src={estudioInk} alt="" widths={[426, 852]} sizes="14vw" quality={82} inferSize />
-          <span class="sr-only">Estudio PUCP</span>
-        </p>
-        <div class="only-capture capture-fill capture-estudio"></div>
-      </div>
-      <div class="r-rol-block">
-        <p class="ink-hit rol-hit only-live scrap-in" style="--d:510">
-          <Image class="type-plate" src={rolInk} alt="" widths={[426, 852]} sizes="20vw" quality={82} inferSize />
-          <span class="sr-only">Rol IBM</span>
-        </p>
-        <div class="only-capture capture-fill capture-rol"></div>
-      </div>
-      <div class="r-skills-title">
-        <h2 class="ink-hit skills-hit only-live scrap-in" id="skills" style="--d:480">
-          <Image class="type-plate" src={skillsInk} alt="" widths={[573, 1146]} sizes="15vw" quality={84} inferSize />
-          <span class="sr-only">SKILLS</span>
-        </h2>
-        <div class="only-capture capture-fill capture-skills"></div>
-      </div>
-      <div class="r-skill-cluster">
-        <p class="ink-hit cluster-hit only-live scrap-in" style="--d:530">
-          <Image class="type-plate" src={clusterInk} alt="" widths={[439, 878]} sizes="30vw" quality={84} inferSize />
-          <span class="sr-only">Skill cluster</span>
-        </p>
-        <div class="only-capture capture-fill capture-cluster"></div>
+        <div class="pack pack-contacto">
+          <a class="r-contacto-stamp stamp-slap" style="--d:90" href="#contacto">
+            <Image class="plate" src={contactoCut} alt="" widths={[400, 800]} sizes="18vw" quality={82} loading="eager" />
+            <span class="sr-only">Contacto</span>
+          </a>
+        </div>
+
+        <div class="pack pack-work">
+          <div class="r-trabajo-sheet slap" style="--d:120">
+            <Image class="plate" src={trabajoSheet} alt="" widths={[1100, 2073]} sizes="100vw" quality={72} loading="eager" />
+          </div>
+          <div class="r-proyecto01-strip slap xerox" style="--d:340">
+            <Image class="plate" src={proyectoStrip} alt="" widths={[960, 1844]} sizes="52vw" quality={70} loading="eager" />
+          </div>
+          <a class="r-trabajo-title slap" style="--d:300" href="#portafolio">
+            <Image class="plate" src={trabajoWord} alt="" widths={[860, 1716]} sizes="38vw" quality={80} loading="eager" />
+            <span class="sr-only">Trabajo</span>
+          </a>
+          <button type="button" class="r-proyecto01-label slap" style="--d:390" data-project="01">
+            <Image class="plate" src={proyecto01Ink} alt="" widths={[579, 1158]} sizes="18vw" quality={84} />
+            <span class="sr-only">Abrir Proyecto 01</span>
+          </button>
+          <button type="button" class="r-proyecto02-label slap" style="--d:430" data-project="02">
+            <Image class="plate" src={proyecto02Scrap} alt="" widths={[480, 960]} sizes="12vw" quality={84} />
+            <span class="sr-only">Abrir Proyecto 02</span>
+          </button>
+        </div>
+
+        <div class="pack pack-camino">
+          <div class="r-camino-card slap" style="--d:170">
+            <Image class="plate" src={caminoCard} alt="" widths={[820, 1612]} sizes="60vw" quality={72} loading="eager" />
+          </div>
+          <a class="r-camino-title slap" style="--d:460" href="#camino-board">
+            <Image class="plate" src={caminoInk} alt="" widths={[320, 640]} sizes="9vw" quality={84} />
+            <span class="sr-only">Camino</span>
+          </a>
+          <p class="r-estudio-block slap" style="--d:490">
+            <Image class="plate" src={estudioInk} alt="" widths={[426, 852]} sizes="9vw" quality={82} />
+            <span class="sr-only">Estudio: PUCP</span>
+          </p>
+          <p class="r-rol-block slap" style="--d:520">
+            <Image class="plate" src={rolInk} alt="" widths={[426, 852]} sizes="9vw" quality={82} />
+            <span class="sr-only">Rol: IBM</span>
+          </p>
+        </div>
+
+        <div class="pack pack-skills">
+          <div class="r-skills-scrap slap" style="--d:210">
+            <Image class="plate" src={skillsScrap} alt="" widths={[600, 1152]} sizes="42vw" quality={72} loading="eager" />
+          </div>
+          <a class="r-skills-title slap" style="--d:470" href="#skills-board">
+            <Image class="plate" src={skillsInk} alt="" widths={[573, 1146]} sizes="14vw" quality={84} />
+            <span class="sr-only">Skills</span>
+          </a>
+          <a class="r-skill-cluster slap" style="--d:550" href="#skills-board">
+            <Image class="plate" src={clusterInk} alt="" widths={[439, 878]} sizes="13vw" quality={84} />
+            <span class="sr-only">Skill cluster</span>
+          </a>
+        </div>
+
+        <Vinyl />
       </div>
     </section>
 
     <section class="more" aria-label="El resto de la mesa" hidden={captureHero}>
-      <article class="sheet pink">
-        <PasteHeadline text="Archivo de obra" />
+      <article class="sheet pink" id="portafolio">
+        <PasteHeadline text="Portafolio" />
         <ol class="project-list">
           {
             rest.map((project) => (
               <li>
-                <span class="slot-id">{project.id}</span>
-                <span class="skill-scrap">{project.title}</span>
-                <span class="slot-status">{project.status}</span>
+                <button type="button" class="project-open" data-project={project.id}>
+                  <span class="slot-id">{project.id}</span>
+                  <span class="skill-scrap">{project.title}</span>
+                  <span class="slot-status">{project.status}</span>
+                </button>
               </li>
             ))
           }
         </ol>
       </article>
 
-      <article class="sheet">
+      <article class="sheet" id="camino-board">
         <PasteHeadline text="Camino completo" />
         <ol class="path-list">
           {
@@ -154,7 +150,7 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
         </ol>
       </article>
 
-      <article class="sheet">
+      <article class="sheet" id="skills-board">
         <PasteHeadline text="Skill cluster" />
         <ul class="skill-list">
           {skills.map((skill) => (
@@ -169,14 +165,15 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
         <PasteHeadline text="Contacto" />
         <div class="contact-row">
           <a href={site.links.linkedin} rel="me" class="scrap-link">
-            <Image class="scrap-btn" src={linkedinScrap} alt="LinkedIn" widths={[384, 768]} sizes="240px" quality={78} inferSize loading="lazy" />
+            <Image class="scrap-btn" src={linkedinScrap} alt="LinkedIn" widths={[384, 768]} sizes="240px" quality={78} loading="lazy" />
           </a>
           <a href={site.links.github} rel="me" class="scrap-link">
-            <Image class="scrap-btn" src={githubScrap} alt="GitHub · Irico17" widths={[384, 768]} sizes="240px" quality={78} inferSize loading="lazy" />
+            <Image class="scrap-btn" src={githubScrap} alt="GitHub · Irico17" widths={[384, 768]} sizes="240px" quality={78} loading="lazy" />
           </a>
         </div>
         <p class="legal">{site.legalName}</p>
       </article>
     </section>
+    {captureHero ? null : <ProjectFlyer projects={projects} />}
   </main>
 </Base>

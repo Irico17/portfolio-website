@@ -180,13 +180,17 @@ Four inks on copy paper: toner, dust, day-glo pink, and the paper itself. Chroma
 
 ## Layout
 
-The first viewport is a paste-up frame: `min(100%, 1536px)`, landscape `1536 / 1024`, overlapping absolute scraps. Trabajo is the largest sheet; CONTACTO shares the top with the name; Camino and Skills tuck under as smaller sheets. Type regions sit above the rasters (z-index ~5–12). The desk does not use a 12-column grid.
+The first viewport is the desk itself: `100% x 100dvh`, no letterboxing. On it sits one board of **1536 x 1024 design units** — the approved comp's own grid. One unit is `min(100cqh / 1024, 100cqw / 1536)`, so every scrap keeps the proportion it has in the comp and nothing is ever stretched to fit a window. The board widens to at most `1812u` (a 1.77 frame) and centers; past that the desk simply shows more surface.
+
+Every scrap is placed in units, never in percentages of the window. Textures that must reach the screen edge (the work sheet, the camino card, the skills scrap) use `--bleed` — `(board width - 100cqw) / 2` — so they bleed to the frame while the type packs stay anchored to the board's left or right. That is what makes the collage spread on a wide monitor instead of squashing.
+
+Vertical rhythm, in units: name 24–380, tagline 392–432, TRABAJO 445–625, Proyecto 01 strip 640–770, work sheet 285–915, camino card 720–1020, skills scrap 745–1040. Gaps are deliberate — no two scraps in that list touch, at any window size. Type regions sit above the rasters (z 6–9); the record sits at z 4, tucked behind the name in the top-left corner. The desk does not use a 12-column grid.
 
 Below the fold, `.more` is a single column at the same max width: gap 1.1rem (`lg`), horizontal padding ~1rem, sheet padding 1.4/1.5/1.6rem (`xl`), bottom margin 4rem (`2xl`). Lists are tight (0.55rem between project rows, 1rem between path/skill items). Contact scraps flex with a 0.4rem gap (`xs`) and a 12–18rem basis.
 
-At `max-width: 860px` the frame becomes a column (gap 0.9rem, `md`), paper-ground and bleed hide, and the same scraps restack in a committed order: name, stamp, tagline, trabajo, slots, camino, skills. Mobile is a translation of the desk, not a different product. Touch targets on stamp, contacto, and scrap links hold 44px.
+At `max-width: 860px` the board becomes a one-column grid (gap 1rem) and the scraps restack as five packs in a committed order: name + tagline, stamp, work (TRABAJO / strip / Proyecto 01 / 02), camino, skills. Inside a pack the scraps keep their overlap, positioned in percentages of the pack. The record is desktop-only — it is the extra beat, not the message. Between 640 and 860px the packs pair up two-up. Mobile is a translation of the desk, not a different product. Every scrap that can be clicked carries a `::after` target of at least 44px, whatever the unit scale.
 
-Spanish region names and skip target (`#trabajo`) stay findable in seconds on both widths.
+Spanish region names and skip target (`#portafolio`) stay findable in seconds on both widths.
 
 ## Elevation & Depth
 
@@ -223,10 +227,13 @@ Flyer hardware: stamps, glued letters, xerox pages, typed labels. No form kit. N
 - **Behavior:** Alternate tiny rotations per sheet. Hover on fine pointer lifts 3px. Headings inside are title-case-as-uppercase tracked mono.
 
 ### Navigation
-- **Style:** No persistent nav bar. The desk is the map. Skip link to Trabajo; CONTACTO stamp jumps to `#contacto`. Scrap links are the only outbound actions (LinkedIn, GitHub). Hover contrast, not underline-as-UI.
+- **Style:** No persistent nav bar. The desk is the map. Skip link to Portafolio; CONTACTO stamp jumps to `#contacto`. Scrap links are the only outbound actions (LinkedIn, GitHub). Hover contrast, not underline-as-UI.
 
 ### Ransom name
-Cut-letter identity. Flex wrap, 0.06em gap, per-letter rotation (~-2deg to 1.6deg), scrap fill, optional invert and hot tiles, one Prism glyph. Letters slap in (480ms, staggered). Hover on a tile adds ~2deg and -2px. Reduced motion holds the settled collage.
+Cut-letter identity, shipped as one plate (`cristhofer-ransom.png`): per-letter rotation, scrap fill, invert and one hot-pink tile. It is the largest thing on the desk — 356u tall, roughly 43-48% of a desktop window — and it is the first scrap to land (40ms). Reduced motion holds the settled collage.
+
+### Slap
+Every scrap arrives once, on load: `translate3d(0, -2.4%, 0) rotate(-1.1deg) scale(1.014)` to rest over 620ms on `--ease-out`, staggered by `--d` in the order a hand would paste them (name, stamp, sheet, tagline, TRABAJO, strip, slots, cards). The stamp gets its own harder drop (`stamp-slap`, -9deg) and the Proyecto 01 strip a `xerox` contrast pulse — the moment the scrap is copied darker. Nothing loops except the record. Reduced motion ships with it.
 
 ### Work label
 Loud mono slot name on the strip (PROYECTO 01 / 02). Uppercase, tracking 0.04em, no kicker above it. Empty work stays `Proyecto NN` + `Slot pendiente`.

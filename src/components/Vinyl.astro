@@ -1,0 +1,28 @@
+<div class="r-vinyl slap" style="--d:300" aria-hidden="true">
+  <div class="vinyl">
+    <div class="vinyl-disc">
+      <span class="vinyl-groove"></span>
+      <span class="vinyl-label">CA</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var disc = document.querySelector(".vinyl-disc");
+    if (!disc) return;
+    if (!("IntersectionObserver" in window)) {
+      disc.classList.add("is-spinning");
+      return;
+    }
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          disc.classList.toggle("is-spinning", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(disc);
+  })();
+</script>

@@ -1,0 +1,86 @@
+---
+import type { ProjectSlot } from "../data/site";
+
+interface Props {
+  projects: readonly ProjectSlot[];
+}
+
+const { projects } = Astro.props;
+const catalogJson = JSON.stringify(projects);
+---
+
+<dialog class="flyer-modal" id="project-flyer" aria-labelledby="flyer-title">
+  <article class="flyer-card">
+    <button type="button" class="flyer-close" data-flyer-close>Cerrar</button>
+    <h2 id="flyer-title">Proyecto</h2>
+    <p class="flyer-status skill-scrap"></p>
+    <p class="flyer-copy"></p>
+    <div class="flyer-shots" aria-hidden="true">
+      <figure class="hold-plate xerox-hold"><span>Placa pendiente</span></figure>
+      <figure class="hold-plate pink-hold"><span>Placa pendiente</span></figure>
+    </div>
+    <h3>Skills en el caso</h3>
+    <ul class="flyer-skills"></ul>
+  </article>
+</dialog>
+
+<script type="application/json" id="project-catalog" set:html={catalogJson} />
+
+<script>
+  (function () {
+    var dialog = document.getElementById("project-flyer");
+    var catalogNode = document.getElementById("project-catalog");
+    if (!dialog || !catalogNode) return;
+
+    var catalog = [];
+    try {
+      catalog = JSON.parse(catalogNode.textContent || "[]");
+    } catch (err) {
+      return;
+    }
+
+    var title = dialog.querySelector("#flyer-title");
+    var status = dialog.querySelector(".flyer-status");
+    var copy = dialog.querySelector(".flyer-copy");
+    var skills = dialog.querySelector(".flyer-skills");
+    var map = Object.create(null);
+    catalog.forEach(function (project) {
+      map[project.id] = project;
+    });
+
+    function fill(id) {
+      var project = map[id] || catalog[0];
+      if (!project) return;
+      title.textContent = project.title;
+      status.textContent = project.status;
+      copy.textContent = project.summary;
+      skills.replaceChildren();
+      (project.skillsUsed || []).forEach(function (skill) {
+        var item = document.createElement("li");
+        item.className = "skill-scrap";
+        item.textContent = skill;
+        skills.appendChild(item);
+      });
+    }
+
+    document.addEventListener("click", function (event) {
+      var target = event.target;
+      if (!(target instanceof Element)) return;
+      var btn = target.closest("[data-project]");
+      if (!btn) return;
+      event.preventDefault();
+      fill(btn.getAttribute("data-project"));
+      if (typeof dialog.showModal === "function") dialog.showModal();
+    });
+
+    dialog.querySelectorAll("[data-flyer-close]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        dialog.close();
+      });
+    });
+
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+  })();
+</script>

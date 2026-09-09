@@ -44,8 +44,24 @@ export const skills = [
   "Technical sales",
 ] as const;
 
-export const projects = Array.from({ length: 10 }, (_, i) => ({
-  id: String(i + 1).padStart(2, "0"),
-  title: `Proyecto ${String(i + 1).padStart(2, "0")}`,
-  status: "Slot pendiente",
-})) as readonly { id: string; title: string; status: string }[];
+export type ProjectSlot = {
+  id: string;
+  title: string;
+  status: string;
+  summary: string;
+  skillsUsed: readonly string[];
+  plates: readonly string[];
+};
+
+export const projects: readonly ProjectSlot[] = Array.from({ length: 10 }, (_, i) => {
+  const id = String(i + 1).padStart(2, "0");
+  return {
+    id,
+    title: `Proyecto ${id}`,
+    status: "Slot pendiente",
+    summary:
+      "Hold: aquí irá qué hice, el problema y lo que se envió. Sin métricas inventadas hasta que cargue el caso real.",
+    skillsUsed: ["Skill pendiente", "Tool pendiente"],
+    plates: ["hold-xerox", "hold-pink"],
+  };
+});

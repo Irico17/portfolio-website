@@ -42,7 +42,7 @@ async function runViewport(name, viewport, reduced = false) {
   await skip.press("Enter");
   await page.waitForTimeout(200);
   const hash = new URL(page.url()).hash;
-  if (hash === "#trabajo") ok(`${name} skip to #trabajo`);
+  if (hash === "#portafolio") ok(`${name} skip to #portafolio`);
   else fail(`${name} skip hash ${hash}`);
 
   await page.keyboard.press("Tab");
