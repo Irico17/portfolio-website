@@ -188,7 +188,7 @@ The desk under everything is the comp's own halftone and torn stock, tiled at 38
 
 Every scrap is placed in units, never in percentages of the window. Textures that must reach the screen edge (the work sheet, the camino card, the skills scrap) use `--bleed` — `(board width - 100cqw) / 2` — so they bleed to the frame while the type packs stay anchored to the board's left or right. That is what makes the collage spread on a wide monitor instead of squashing.
 
-Vertical rhythm, in units: name 24–374, tagline 382–416, TRABAJO 426–626, Proyecto 01 strip 636–795, work sheet -24–916, camino card 720–1020, skills scrap 745–1045. Every plate box carries its plate's own aspect — `object-fit: fill` only ever fills, it never stretches — and `scripts/verify-layout.mjs` fails the build if a box drifts more than 3% from its image. Gaps are deliberate — no two scraps in that list touch, at any window size. Type regions sit above the rasters (z 6–9); the record sits at z 4, tucked behind the name in the top-left corner. The desk does not use a 12-column grid.
+Vertical rhythm, in units: name 24–374, tagline 382–416, TRABAJO 400–600, Proyecto 01 strip 636–795, work sheet -24–916, camino card 575–1053, skills scrap 598–1048. Upper-right collage is a second xerox page plus a torn scrap under the CONTACTO stamp — same stock as the desk, not drawn marks. Every plate box carries its plate's own aspect — `object-fit: fill` only ever fills, it never stretches — and `scripts/verify-layout.mjs` fails the build if a box drifts more than 3% from its image. Type regions sit above the rasters (z 6–9); paper sheets stay z 1–5 so a hovering sheet never covers ink. The record sits at z 4, tucked behind the name in the top-left corner. The desk does not use a 12-column grid.
 
 Below the fold, `.more` is a single column at the same max width: gap 1.1rem (`lg`), horizontal padding ~1rem, sheet padding 1.4/1.5/1.6rem (`xl`), bottom margin 4rem (`2xl`). Lists are tight (0.55rem between project rows, 1rem between path/skill items). Contact scraps flex with a 0.4rem gap (`xs`) and a 12–18rem basis.
 
@@ -206,6 +206,8 @@ Depth is physical stacking, not a card-shadow scale. On the desk, sheets overlap
 
 ### Named Rules
 **The Overlap Rule.** Desk depth comes from overlapping scraps, z-index, and grain. Soft drops belong on stacked xerox sheets below the fold. Hard-offset lips belong on cut letters only.
+
+**The Two Hands Rule.** Background sheets and foreground ink are two hover families. Paper never outranks lead in z-index or in lift.
 
 ## Shapes
 
@@ -237,7 +239,13 @@ Flyer hardware: stamps, glued letters, xerox pages, typed labels. No form kit. N
 Cut-letter identity, shipped as one plate (`cristhofer-ransom.png`): per-letter rotation, scrap fill, invert and one hot-pink tile. It is the largest thing on the desk — 356u tall, roughly 43-48% of a desktop window — and it is the first scrap to land (40ms). Reduced motion holds the settled collage.
 
 ### Hover
-A scrap that answers the pointer peels off the table: up 1.3%, rotated 1.7deg (alternating direction, the way a hand would have pasted it), scaled 1.035, with a real drop shadow underneath — 190ms on `--ease-out`, transform-origin at 24%/76% so it pivots like a pinned corner. Focus-visible gets the same treatment. Entrance animations must use `animation-fill-mode: backwards`, never `both`: a filled animation keeps its `transform` applied and outranks the hover transition, which silently kills every hover on the board. `scripts/shot-hover.mjs` fails if a control stops reacting.
+Two families share one curve (`190ms` `--ease-out`, origin 24%/76%) and never mix.
+
+**Paper** (`.paper`): the xerox sheets under the ink — work sheet, camino card, skills scrap, pink strip, right-hand page and torn card, halftone pin. They peel quieter: up 0.7%, rotate ±0.55deg, scale 1.012, shadow only. The full-bleed work sheet is quieter still (0.4% / 0.32deg / 1.006) so the desk does not jump. Paper hover caps at z 5, under every label.
+
+**Lead** (`.lead`): the name, tagline, CONTACTO stamp, TRABAJO, project slots, Camino / Estudio / Rol, Skills. They peel louder: up 1.3%, rotate ±1.7deg, scale 1.035, drop shadow plus contrast 1.14. Focus-visible matches hover. Active settles to 0.2% / scale 1.004.
+
+Entrance animations must use `animation-fill-mode: backwards`, never `both`: a filled animation keeps its `transform` applied and outranks the hover transition, which silently kills every hover on the board.
 
 ### Slap
 Every scrap arrives once, on load: `translate3d(0, -2.4%, 0) rotate(-1.1deg) scale(1.014)` to rest over 620ms on `--ease-out`, staggered by `--d` in the order a hand would paste them (name, stamp, sheet, tagline, TRABAJO, strip, slots, cards). The stamp gets its own harder drop (`stamp-slap`, -9deg) and the Proyecto 01 strip a `xerox` contrast pulse — the moment the scrap is copied darker. Nothing loops except the record. Reduced motion ships with it.
@@ -255,7 +263,8 @@ Two-line typed scrap: uppercase label (`Estudio`, `Rol`) then a dashed rule and 
 - **Do** build identity as ransom tiles and section yells as Archivo Black; let Intel One Mono do the reading.
 - **Do** stack overlapping xerox scraps on desktop and restack those same scraps below 860px.
 - **Do** leave empty work as numbered slots. Spanish chrome; SKILLS may stay as shipped.
-- **Do** slap scraps on enter (560ms ease-out) and kill motion when `prefers-reduced-motion: reduce`. Keep 44px hits and a visible pink focus ring.
+- **Do** slap scraps on enter (620ms ease-out) and kill motion when `prefers-reduced-motion: reduce`. Keep 44px hits and a visible pink focus ring.
+- **Do** keep paper hover and lead hover as two families. A sheet shifts; a name or option peels. Never give the work sheet the lead lift.
 
 ### Don't:
 - **Don't** introduce a second accent, a dark recinto shell, or a SaaS card grid.

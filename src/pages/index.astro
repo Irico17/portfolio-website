@@ -9,7 +9,7 @@ import trabajoSheet from "../assets/plates/desk-sheet.png";
 import biroFrame from "../assets/plates/biro-frame.png";
 import biroArrow from "../assets/plates/biro-arrow.png";
 import scrapHalftone from "../assets/plates/scrap-halftone.png";
-import scrapTorn from "../assets/plates/scrap-torn.png";
+import paperGround from "../assets/plates/paper-ground.png";
 import proyectoStrip from "../assets/plates/proyecto01-strip.png";
 import caminoCard from "../assets/plates/camino-card.png";
 import skillsScrap from "../assets/plates/skills-scrap.png";
@@ -36,7 +36,7 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
     <section class="comp-frame" aria-label="Mesa de paste-up">
       <div class="board">
         <div class="pack pack-name">
-          <h1 class="r-nombre-ransom slap" style="--d:40">
+          <h1 class="r-nombre-ransom lead slap" style="--d:40">
             <Image
               class="plate"
               src={cristhoferRansom}
@@ -48,30 +48,33 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
               fetchpriority="high"
             />
           </h1>
-          <p class="r-tagline slap" style="--d:260">
+          <p class="r-tagline lead slap" style="--d:260">
             <Image class="plate" src={taglineBiro} alt="" widths={[715, 1429]} sizes="24vw" quality={82} loading="eager" />
             <span class="sr-only">{site.roleLine}</span>
           </p>
         </div>
 
         <div class="pack pack-contacto">
-          <div class="r-scrap-halftone slap" style="--d:150" aria-hidden="true">
+          <div class="r-right-page paper slap" style="--d:120" aria-hidden="true">
+            <Image class="plate" src={paperGround} alt="" widths={[308, 616]} sizes="22vw" quality={76} loading="eager" />
+          </div>
+          <div class="r-right-card paper slap" style="--d:160" aria-hidden="true">
+            <Image class="plate" src={skillsScrap} alt="" widths={[600, 1152]} sizes="26vw" quality={74} loading="eager" />
+          </div>
+          <div class="r-scrap-halftone paper slap" style="--d:190" aria-hidden="true">
             <Image class="plate" src={scrapHalftone} alt="" widths={[250, 500]} sizes="12vw" quality={74} loading="eager" />
           </div>
-          <div class="r-scrap-torn slap" style="--d:200" aria-hidden="true">
-            <Image class="plate" src={scrapTorn} alt="" widths={[400, 800]} sizes="20vw" quality={74} loading="eager" />
-          </div>
-          <a class="r-contacto-stamp stamp-slap" style="--d:90" href="#contacto">
+          <a class="r-contacto-stamp lead stamp-slap" style="--d:90" href="#contacto">
             <Image class="plate" src={contactoCut} alt="" widths={[400, 800]} sizes="18vw" quality={82} loading="eager" />
             <span class="sr-only">Contacto</span>
           </a>
         </div>
 
         <div class="pack pack-work">
-          <div class="r-trabajo-sheet slap" style="--d:120">
+          <div class="r-trabajo-sheet paper slap" style="--d:120">
             <Image class="plate" src={trabajoSheet} alt="" widths={[1100, 2073]} sizes="100vw" quality={72} loading="eager" />
           </div>
-          <div class="r-proyecto01-strip slap xerox" style="--d:340">
+          <div class="r-proyecto01-strip paper slap xerox" style="--d:340">
             <Image class="plate" src={proyectoStrip} alt="" widths={[960, 1844]} sizes="52vw" quality={70} loading="eager" />
           </div>
           <div class="r-biro-frame slap" style="--d:500" aria-hidden="true">
@@ -80,47 +83,47 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
           <div class="r-biro-arrow slap" style="--d:520" aria-hidden="true">
             <Image class="plate" src={biroArrow} alt="" widths={[153, 306]} sizes="6vw" quality={82} />
           </div>
-          <a class="r-trabajo-title slap" style="--d:300" href="#portafolio">
+          <a class="r-trabajo-title lead slap" style="--d:300" href="#portafolio">
             <Image class="plate" src={trabajoWord} alt="" widths={[860, 1716]} sizes="38vw" quality={80} loading="eager" />
             <span class="sr-only">Trabajo</span>
           </a>
-          <button type="button" class="r-proyecto01-label slap" style="--d:390" data-project="01">
+          <button type="button" class="r-proyecto01-label lead slap" style="--d:390" data-project="01">
             <Image class="plate" src={proyecto01Ink} alt="" widths={[579, 1158]} sizes="18vw" quality={84} />
             <span class="sr-only">Abrir Proyecto 01</span>
           </button>
-          <button type="button" class="r-proyecto02-label slap" style="--d:430" data-project="02">
+          <button type="button" class="r-proyecto02-label lead slap" style="--d:430" data-project="02">
             <Image class="plate" src={proyecto02Scrap} alt="" widths={[480, 960]} sizes="12vw" quality={84} />
             <span class="sr-only">Abrir Proyecto 02</span>
           </button>
         </div>
 
         <div class="pack pack-camino">
-          <div class="r-camino-card slap" style="--d:170">
+          <div class="r-camino-card paper slap" style="--d:170">
             <Image class="plate" src={caminoCard} alt="" widths={[820, 1612]} sizes="60vw" quality={72} loading="eager" />
           </div>
-          <a class="r-camino-title slap" style="--d:460" href="#camino-board">
+          <a class="r-camino-title lead slap" style="--d:460" href="#camino-board">
             <Image class="plate" src={caminoInk} alt="" widths={[320, 640]} sizes="9vw" quality={84} />
             <span class="sr-only">Camino</span>
           </a>
-          <p class="r-estudio-block slap" style="--d:490">
+          <p class="r-estudio-block lead slap" style="--d:490">
             <Image class="plate" src={estudioInk} alt="" widths={[426, 852]} sizes="9vw" quality={82} />
             <span class="sr-only">Estudio: PUCP</span>
           </p>
-          <p class="r-rol-block slap" style="--d:520">
+          <p class="r-rol-block lead slap" style="--d:520">
             <Image class="plate" src={rolInk} alt="" widths={[426, 852]} sizes="9vw" quality={82} />
             <span class="sr-only">Rol: IBM</span>
           </p>
         </div>
 
         <div class="pack pack-skills">
-          <div class="r-skills-scrap slap" style="--d:210">
+          <div class="r-skills-scrap paper slap" style="--d:210">
             <Image class="plate" src={skillsScrap} alt="" widths={[600, 1152]} sizes="42vw" quality={72} loading="eager" />
           </div>
-          <a class="r-skills-title slap" style="--d:470" href="#skills-board">
+          <a class="r-skills-title lead slap" style="--d:470" href="#skills-board">
             <Image class="plate" src={skillsInk} alt="" widths={[573, 1146]} sizes="14vw" quality={84} />
             <span class="sr-only">Skills</span>
           </a>
-          <a class="r-skill-cluster slap" style="--d:550" href="#skills-board">
+          <a class="r-skill-cluster lead slap" style="--d:550" href="#skills-board">
             <Image class="plate" src={clusterInk} alt="" widths={[439, 878]} sizes="13vw" quality={84} />
             <span class="sr-only">Skill cluster</span>
           </a>
