@@ -222,7 +222,7 @@ Flyer hardware: stamps, glued letters, xerox pages, typed labels. No form kit. N
 - **Primary (CONTACTO stamp):** Transparent fill, 3px solid stamp ink, Archivo Black, 26px, tracking 0.1em, uppercase, padding 0.15rem 0.4rem (0.7rem 1rem and min-height 44px when stacked). Rotated -7deg. Live hero may paint this as a plate; the CSS stamp is the reusable action.
 - **Hover / Focus:** On fine pointer, translateY(-3px) and contrast 1.18. Keyboard focus is a 2px pink outline with 3px offset (global). Active scrap links scale to 0.97.
 - **Skip:** Toner fill, paper type, padding 0.6rem 0.8rem, parked off-canvas until focused. Copy stays Spanish (`Ir a trabajo`).
-- **Scrap links:** Image-plate contact buttons (LinkedIn, GitHub), transparent, min 44×44px, no text chrome, no icon font.
+- **Scrap links:** Image-plate contact buttons (LinkedIn, GitHub, phone, email), transparent, min 44×44px, no text chrome, no icon font.
 
 ### Cards / Containers
 - **Corner Style:** Square cut (0)
@@ -233,7 +233,7 @@ Flyer hardware: stamps, glued letters, xerox pages, typed labels. No form kit. N
 - **Behavior:** Alternate tiny rotations per sheet. Hover on fine pointer lifts 3px. Headings inside are title-case-as-uppercase tracked mono.
 
 ### Navigation
-- **Style:** No persistent nav bar. The desk is the map. Skip link to Portafolio; CONTACTO stamp jumps to `#contacto`. Scrap links are the only outbound actions (LinkedIn, GitHub). Hover contrast, not underline-as-UI.
+- **Style:** No persistent nav bar. The desk is the map. Skip link to Portafolio; CONTACTO stamp jumps to `#contacto`. Scrap links are the only outbound actions (LinkedIn, GitHub, phone, email). Hover contrast, not underline-as-UI.
 
 ### Ransom name
 Cut-letter identity, shipped as one plate (`cristhofer-ransom.png`): per-letter rotation, scrap fill, invert and one hot-pink tile. It is the largest thing on the desk — 356u tall, roughly 43-48% of a desktop window — and it is the first scrap to land (40ms). Reduced motion holds the settled collage.

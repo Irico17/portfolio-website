@@ -208,18 +208,33 @@ a {
   z-index: 1;
 }
 
-.r-trabajo-sheet .plate {
+.r-trabajo-sheet > .plate,
+.r-trabajo-sheet > picture .plate {
   object-fit: cover;
   object-position: 18% 42%;
   transform: rotate(-0.9deg) scale(1.02);
-  -webkit-mask-image: radial-gradient(ellipse 88% 82% at 58% 36%, #000 48%, transparent 76%);
-  mask-image: radial-gradient(ellipse 88% 82% at 58% 36%, #000 48%, transparent 76%);
+  -webkit-mask-image: linear-gradient(to right, rgb(0 0 0 / 0.4) 0%, #000 12%, #000 100%);
+  mask-image: linear-gradient(to right, rgb(0 0 0 / 0.4) 0%, #000 12%, #000 100%);
+}
+
+.r-trabajo-tear {
+  left: calc(380 * var(--u));
+  top: calc(470 * var(--u));
+  width: calc(980 * var(--u));
+  height: calc(360 * var(--u));
+  z-index: 4;
+  pointer-events: none;
+}
+
+.r-trabajo-tear .plate {
+  object-fit: fill;
+  transform: rotate(-1.1deg);
 }
 
 .r-camino-card .plate {
   object-fit: cover;
-  object-position: 12% 40%;
-  transform: rotate(-1.2deg) scale(1.1);
+  object-position: 4% 40%;
+  transform: rotate(-1.2deg) scale(1.12);
 }
 
 .r-skills-scrap .plate {
@@ -235,6 +250,7 @@ a {
 /* the plates are rectangles; a sheet reads as paper on a desk only if
    it casts a shadow, and a torn card only if its cut edge fades out */
 .r-trabajo-sheet,
+.r-trabajo-tear,
 .r-nombre-ransom,
 .r-right-page,
 .r-right-card,
@@ -244,8 +260,8 @@ a {
 }
 
 .r-camino-card .plate {
-  -webkit-mask-image: linear-gradient(to right, #000 0 88%, transparent 100%);
-  mask-image: linear-gradient(to right, #000 0 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 0 58%, transparent 78%);
+  mask-image: linear-gradient(to right, #000 0 58%, transparent 78%);
 }
 
 .r-skills-scrap .plate {
@@ -670,7 +686,8 @@ a {
     background-position: center;
   }
 
-  .r-trabajo-sheet .plate {
+  .r-trabajo-sheet .plate,
+  .r-trabajo-tear {
     display: none;
   }
 
@@ -993,7 +1010,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  align-items: stretch;
+  align-items: center;
 }
 
 .scrap-link {
@@ -1004,7 +1021,7 @@ a {
   background: transparent;
   text-decoration: none;
   flex: 1 1 12rem;
-  max-width: 18rem;
+  max-width: 22rem;
 }
 
 .scrap-btn,

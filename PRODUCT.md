@@ -32,7 +32,7 @@ Visited in a browser. First view is the hero. Then a scroll or staged path throu
 
 - Single-page portfolio with clear regions for Work, Education & Career, and Skills.
 - Work slots may be empty placeholders. Do not invent projects, metrics, or extra employers.
-- Contact is LinkedIn and GitHub.
+- Contact is LinkedIn, GitHub, phone, and email.
 - Must stay usable on mobile. The extraordinary moment lives on desktop; mobile gets a committed, lighter translation, not a amputated demo.
 - No autoplaying sound. No login. No CMS in this phase.
 
@@ -51,6 +51,8 @@ Voice: bilingual-capable later (Spanish + English). For this phase, interface ch
 Owner: Cristhofer Alegre (Cristhofer Arhon Alegre Cotrina).
 - LinkedIn: https://www.linkedin.com/in/cristhoferalegre/
 - GitHub: https://github.com/Irico17
+- Phone: 900 420 117
+- Email: arhonalegre@gmail.com
 - Estudio: Ingeniería Informática, PUCP, 2021 – actualidad (10.º ciclo).
 - Rol 1: Analista de datos, Municipalidad de Lima, enero – junio 2025.
 - Rol 2: Technical Software Sales Student, IBM, mayo 2026 – actualidad. POCs y demos para América Móvil, Credicorp, Intercorp y otras.

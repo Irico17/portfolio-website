@@ -26,6 +26,9 @@ import skillsInk from "../assets/plates/skills-ink.png";
 import clusterInk from "../assets/plates/cluster-ink.png";
 import linkedinScrap from "../assets/plates/linkedin-scrap.png";
 import githubScrap from "../assets/plates/github-scrap.png";
+import phoneScrap from "../assets/plates/phone-scrap.png";
+import emailScrap from "../assets/plates/email-scrap.png";
+import joinSheet from "../assets/plates/join-sheet.png";
 
 const rest = projects;
 const captureHero = Astro.url.searchParams.get("capture") === "hero";
@@ -73,6 +76,9 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
         <div class="pack pack-work">
           <div class="r-trabajo-sheet paper slap" style="--d:120">
             <Image class="plate" src={trabajoSheet} alt="" widths={[1100, 2073]} sizes="100vw" quality={72} loading="eager" />
+          </div>
+          <div class="r-trabajo-tear paper slap" style="--d:140" aria-hidden="true">
+            <Image class="plate" src={joinSheet} alt="" widths={[600, 1192]} sizes="55vw" quality={76} loading="eager" />
           </div>
           <div class="r-proyecto01-strip paper slap xerox" style="--d:340">
             <Image class="plate" src={proyectoStrip} alt="" widths={[960, 1844]} sizes="52vw" quality={70} loading="eager" />
@@ -188,6 +194,12 @@ const captureHero = Astro.url.searchParams.get("capture") === "hero";
           </a>
           <a href={site.links.github} rel="me" class="scrap-link">
             <Image class="scrap-btn" src={githubScrap} alt="GitHub · Irico17" widths={[384, 768]} sizes="240px" quality={78} loading="lazy" />
+          </a>
+          <a href={site.links.phoneHref} class="scrap-link">
+            <Image class="scrap-btn" src={phoneScrap} alt="900 420 117" widths={[731, 1462]} sizes="240px" quality={82} loading="lazy" />
+          </a>
+          <a href={`mailto:${site.links.email}`} class="scrap-link">
+            <Image class="scrap-btn" src={emailScrap} alt={site.links.email} widths={[686, 1372]} sizes="280px" quality={82} loading="lazy" />
           </a>
         </div>
         <p class="legal">{site.legalName}</p>

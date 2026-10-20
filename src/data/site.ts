@@ -8,6 +8,9 @@ export const site = {
   links: {
     linkedin: "https://www.linkedin.com/in/cristhoferalegre/",
     github: "https://github.com/Irico17",
+    email: "arhonalegre@gmail.com",
+    phone: "900420117",
+    phoneHref: "tel:+51900420117",
   },
 } as const;
 
